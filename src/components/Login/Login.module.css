@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Inter+Tight:wght@900&family=Kanit:wght@900&family=Lato:wght@300&family=Poppins:wght@200&family=Shalimar&display=swap');
+.wrappper{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+.formWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+    padding: 7rem 5rem;
+}
+.formWrap input{
+    outline: none;
+    height: 2rem;
+    border-radius: 5px;
+    width: 13rem;
+    border-color: dodgerblue;
+    border-width: 2px;
+    padding: 0px 1rem;
+    background-color: transparent;
+    color:#000;
+}
+.formWrap button{
+    padding: 9px 10px;
+    border: none;
+    background-color: #0079d3;
+    color: white;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.loginCaption{
+    position: relative;
+    left: 5rem;
+    bottom: 4rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    font-family: Poppins;
+}
+.signup{
+    font-family: Lato;
+    position: relative;
+    left: 2rem;
+    top: 2rem;
+}
+
+
