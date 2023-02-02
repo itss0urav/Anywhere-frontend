@@ -10,7 +10,7 @@ const SignUp = () => {
         <input type="text" placeholder='Enter your email'/>
         <input type="text" placeholder='Enter your password'/>
         <button>Login</button>
-        <span className={styles.signup}>Already have an account ? <Link to="/login" className='link'>login</Link></span>
+        <span className={styles.signup}>Already have an account ? <Link to="/login" className='link'>Login</Link></span>
       </form>
     </div>
   )
