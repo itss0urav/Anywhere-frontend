@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Navbar.module.css"
-import {Outlet} from "react-router-dom"
+import {Outlet, Link} from "react-router-dom"
 const Navbar = () => {
   return (
     <>
@@ -17,7 +17,7 @@ const Navbar = () => {
         </div>
         {/* Secode section */}
         <div className={styles.secTwoWrap}>
-            <button className={styles.authBtn}>Login</button>
+           <Link to="/login"><button className={styles.authBtn}>Login</button></Link> 
             <button className={styles.authBtn}>SignUp</button>
             <i class="fa-solid fa-user userIcon "></i>
          </div>
