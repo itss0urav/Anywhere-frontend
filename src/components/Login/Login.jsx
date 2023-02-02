@@ -5,11 +5,11 @@ const Login = () => {
   return (
     <div className={styles.wrappper}>
       <form className={styles.formWrap}>
-        <span className={styles.loginCaption}>Login</span>
+        <span className={styles.loginCaption}>LogIn</span>
         <input type="text" placeholder='Enter your username'/>
         <input type="text" placeholder='Enter your password'/>
-        <button>Login</button>
-        <span className={styles.signup}>New to Anywhere ?<Link to="/signUp" className='link'> Sign Up</Link></span>
+        <button>LogIn</button>
+        <span className={styles.signup}>New to Anywhere ?<Link to="/signUp" className='link'> SignUp</Link></span>
       </form>
     </div>
   )
