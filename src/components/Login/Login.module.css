@@ -3,7 +3,7 @@
     height: 100vh;
     display: grid;
     place-content: center;
-    background-image: linear-gradient(rgb(0, 255, 255), rgb(5, 52, 93));
+    
 }
 .formWrap{
     display: flex;
