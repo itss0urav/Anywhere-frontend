@@ -8,6 +8,10 @@
   justify-content: space-between;
 }
 
+.MyLogo {
+  background-image: url("https://media.discordapp.net/attachments/1070984839077036052/1070990056757657670/Anywhere_logo.png?width=885&height=668");
+}
+
 .secOneWrap {
   display: flex;
   gap: 2rem;

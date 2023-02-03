@@ -5,3 +5,26 @@
 .link{
   text-decoration: none;
 }
+.indexBody{
+  background-image: url("https://cdn.discordapp.com/attachments/1070984839077036052/1070984916050907146/BlackHole_HD.png");
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: relative;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 40% 50%;
+	}
+	50% {
+		background-position: 50% 50%;
+	}
+  100% {
+		background-position: 40% 50%;
+	}
+	
+}

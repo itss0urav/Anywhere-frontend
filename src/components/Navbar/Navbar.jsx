@@ -8,7 +8,7 @@ const Navbar = () => {
        <div className={styles.container}>
         {/* First section */}
         <div className={styles.secOneWrap}>
-            <p>MyLogo</p>
+            <p><img src="https://media.discordapp.net/attachments/1070984839077036052/1070994572068524032/ALUT.png" width="45" height="27"></img></p>
             <div className={styles.searchBoxWrap}>
 
             <input type="text" className={styles.serachBox} placeholder="Search posts here..."/>
