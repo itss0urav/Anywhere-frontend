@@ -1,0 +1,52 @@
+.post {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .post-content {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .post-link {
+    font-size: 14px;
+    color: #337ab7;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .post-votes {
+    display: flex;
+    align-items: center;
+  }
+  
+  .post-upvote,
+  .post-downvote {
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .post-upvote:hover,
+  .post-downvote:hover {
+    background-color: #ddd;
+  }
+  
+  .post-vote-count {
+    margin: 0 10px;
+  }
+  
