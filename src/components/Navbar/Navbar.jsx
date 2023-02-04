@@ -18,7 +18,7 @@ const Navbar = () => {
         {/* Secode section */}
         <div className={styles.secTwoWrap}>
            <Link to="/login"><button className={styles.authBtn}>Login</button></Link> 
-            <button className={styles.authBtn}>SignUp</button>
+           <Link to="/signUp"><button className={styles.authBtn}>SignUp</button></Link>
             <i class="fa-solid fa-user userIcon "></i>
          </div>
        </div>
