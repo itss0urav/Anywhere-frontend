@@ -13,7 +13,7 @@ const Post = (postData) => {
           <p>Posted by Author</p>
         </div>
         <p className={styles.title}>
-          Ikka Fans Fans
+          IKKA FANS (KARACHI UNITED)
         </p>
         <div className={styles.imageWrap}>
           <img

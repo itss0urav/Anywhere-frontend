@@ -24,9 +24,10 @@
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
-    rgb(5, 212, 235) 1%,
-    rgba(2, 0, 36, 1) 10%,
-    rgba(9, 9, 121, 1) 45%,
+    rgb(5, 212, 235) 0%,
+    rgb(5, 0, 93) 15%,
+    rgba(2, 0, 36, 1) 50%,
+    rgb(0, 0, 93) 85%,
     rgba(0, 212, 255, 1) 100%
   );
   text-align: start;
@@ -66,4 +67,5 @@
   justify-content: start;
   font-size: 20px;
   margin-top: 20px;
+  margin-left: 20px;
 }
