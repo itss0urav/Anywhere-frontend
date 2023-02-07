@@ -4,23 +4,23 @@ import Navbar from "./components/Navbar/Navbar";
 import Login from "./components/Login/Login";
 import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp/SignUp";
-import Post from "./components/Post/Post";
-import {QueryClient, QueryClientProvider} from "react-query"
+import { QueryClient, QueryClientProvider } from "react-query";
+import Posts from "./components/Posts/Posts";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 function App() {
   return (
     <div className="App">
       <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navbar />}>
-            <Route path="/" element={<Post />}/>
-          </Route>
-          <Route path="logIn" element={<Login />} />
-          <Route path="signUp" element={<SignUp />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Navbar />}>
+              <Route path="/" element={<Posts />} />
+            </Route>
+            <Route path="logIn" element={<Login />} />
+            <Route path="signUp" element={<SignUp />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     </div>
   );

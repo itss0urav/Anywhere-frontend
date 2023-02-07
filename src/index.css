@@ -1,27 +1,25 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
-.link{
+.link {
   text-decoration: none;
 }
 
-
 body {
-	background: linear-gradient(-45deg, #006aff, #00d0ff, #0068a9, #00f2ff);
-	background-size: 300% 300%;
-	animation: gradient 10s ease infinite;
-	height: 100vh;
+  background: linear-gradient(-45deg, #006aff, #00d0ff, #00578e, #00f2ff);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 60%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 60%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

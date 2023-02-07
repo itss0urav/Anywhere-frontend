@@ -1,6 +1,11 @@
 .wrapper {
   padding: 1rem 2rem;
-  background-color: rgb(6, 36, 76);
+  background: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgb(7, 7, 125) 50%,
+    rgb(0, 0, 0) 100%
+  );
   color: white;
 }
 .container {
@@ -23,35 +28,34 @@
   align-items: center;
 }
 
-.authBtn{
-    padding: 5px 10px;
-    border: none;
-    background-color: #0079d3;
-    color: white;
-    border-radius: 5px;
-    font-weight: bolder;
-    cursor: pointer;
+.authBtn {
+  padding: 5px 10px;
+  border: none;
+  background-color: #0079d3;
+  color: white;
+  border-radius: 5px;
+  font-weight: bolder;
+  cursor: pointer;
 }
-.userIcon{
-   cursor: pointer;
+.userIcon {
+  cursor: pointer;
 }
-.serachBox{
-    outline: none;
-    height: 1.7rem;
-    border-radius: 5px;
-    width: 20rem;
-    border-color: dodgerblue;
-    border-width: 2px;
-    padding: 0px 1rem;
-    background-color: transparent;
-    color:#fff;
+.serachBox {
+  outline: none;
+  height: 1.7rem;
+  border-radius: 5px;
+  width: 20rem;
+  border-color: dodgerblue;
+  border-width: 2px;
+  padding: 0px 1rem;
+  background-color: transparent;
+  color: #fff;
 }
-.searchBoxWrap{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.searchBoxWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.serachBox::placeholder{
-    color: rgb(196, 194, 218);
+.serachBox::placeholder {
+  color: rgb(196, 194, 218);
 }
-
