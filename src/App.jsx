@@ -5,9 +5,13 @@ import Login from "./components/Login/Login";
 import { BrowserRouter, Router, Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp/SignUp";
 import Post from "./components/Post/Post";
+import {QueryClient, QueryClientProvider} from "react-query"
+
+const queryClient = new QueryClient()
 function App() {
   return (
     <div className="App">
+      <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />}>
@@ -17,8 +21,8 @@ function App() {
           <Route path="signUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
+      </QueryClientProvider>
     </div>
   );
 }
-
 export default App;
