@@ -13,19 +13,16 @@ const Post = (postData) => {
           <p>Posted by Author</p>
         </div>
         <p className={styles.title}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-          expedita saepe itaque tenetur esse natus cumque, rem fugiat sit iusto?
+          Ikka Fans Fans
         </p>
         <div className={styles.imageWrap}>
           <img
-            src="https://images.unsplash.com/photo-1661956601030-fdfb9c7e9e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=442&q=80"
+            src="https://media.discordapp.net/attachments/979241917852303370/1054756965273845820/Picsart_22-12-20_19-16-40-819.jpg?width=1191&height=670"
             alt="computer"
           />
         </div>
         <p className={styles.desc}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-          aliquid possimus, amet voluptatum rem incidunt quibusdam aut maiores
-          explicabo deserunt.
+        "Ikka fans" refers to fans of Indian film actor Mammootty. He is a prominent film actor in the Indian film industry, particularly in the Malayalam film industry. He has acted in over 400 films and is considered one of the greatest actors in Indian cinema. His fans admire his acting skills, versatility, and charismatic screen presence. They are passionate about his movies and follow his work closely.
         </p>
         <div className={styles.feedBacks}>
           <i class="fa-solid fa-comment-dots"></i>
