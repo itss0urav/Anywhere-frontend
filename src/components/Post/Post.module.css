@@ -10,6 +10,7 @@
   border-radius: 10px;
 }
 .imageWrap {
+  
   height: 55%;
   width: 90%;
 }
@@ -68,4 +69,8 @@
   font-size: 20px;
   margin-top: 20px;
   margin-left: 20px;
+}
+.desc{
+  padding-left: 36px;
+  padding-right: 36px;
 }
