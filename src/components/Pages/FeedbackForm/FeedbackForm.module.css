@@ -27,10 +27,11 @@ label {
 
 input[type="text"],
 input[type="email"],
-textarea {
+
+.opinions {
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border: 1px solid lightgray;
   border-radius: 5px;
 }

@@ -57,10 +57,10 @@ const FeedbackForm = () => {
           </select>
         </label>
       </div>
-      <div className={styles.commenty}>
+      <div>
         <label>
           Comments:
-          <textarea
+          <textarea className={styles.opinions}
             value={comments}
             onChange={(event) => setComments(event.target.value)}
             required
