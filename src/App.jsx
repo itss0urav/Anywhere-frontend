@@ -24,7 +24,7 @@ function App() {
             <Route path="signUp" element={<SignUp />} />
             <Route path="FeedbackForm" element={<FeedbackForm />} />
             <Route path="Sidebar" element={<Sidebar />} />
-            <Route path="UserProfile" element={<User />} />
+            <Route path="User" element={<User />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
