@@ -44,12 +44,12 @@
 
 .formWrap button {
   padding: 9px 10px;
+  position: relative;
   border: none;
   color: rgb(255, 255, 255);
   border-radius: 5px;
   font-weight: bolder;
   cursor: pointer;
-  position: relative;
   bottom: 1rem;
   z-index: 0;
 }

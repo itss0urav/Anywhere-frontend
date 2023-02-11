@@ -3,7 +3,7 @@
   width: 500px;
   margin: 0 auto;
   text-align: left;
-  padding: 30px;
+  padding: 110px;
   border: 1px solid lightgray;
   border-radius: 5px;
   background: linear-gradient(
@@ -16,7 +16,7 @@
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 label {
@@ -27,24 +27,28 @@ label {
 
 .formWrap input{
   width: 100%;
-  height: 40px;
+  height: 35px;
   border-radius: 5px;
   outline: none;
   padding: 5px 5px;
 }
+
 select {
-  width: 103%;
-  /* padding: 10px; */
-  margin-bottom: 20px;
+  width: 102.5%;
+  margin-bottom: 5px;
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: white;
  height: 40px;
+ 
 }
 
 button {
-  width: 100%;
+  margin-top: 15px;
+
+  width: 98%;
   padding: 10px;
+  margin-bottom: 10px;
   background: linear-gradient(
     90deg,
     rgb(1, 6, 140) 0%,
@@ -55,6 +59,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  
 }
 
 button[type="submit"]:hover {
