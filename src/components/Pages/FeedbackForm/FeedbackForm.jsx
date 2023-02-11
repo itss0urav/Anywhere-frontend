@@ -57,7 +57,7 @@ const FeedbackForm = () => {
           </select>
         </label>
       </div>
-      <div>
+      <div className={styles.commenty}>
         <label>
           Comments:
           <textarea
