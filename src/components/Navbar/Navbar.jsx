@@ -32,11 +32,13 @@ const Navbar = () => {
             <Link to="/signUp">
               <button className={styles.authBtn}>SignUp</button>
             </Link>
+            <Link to="/user">
             <i class="fa-solid fa-user userIcon "></i>
+            </Link>
           </div>
         </div>
       </div>
-      <Outlet />
+      <Outlet/>
     </>
   );
 };
