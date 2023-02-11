@@ -17,8 +17,8 @@ const FeedbackForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Feedback Form</h1>
+    <form onSubmit={handleSubmit} className={styles.formWrap}>
+      <h1 className={styles.header}>Feedback Form</h1>
       {successMessage ? (
         <p style={{ color: "green" }}>{successMessage}</p>
       ) : null}
@@ -60,7 +60,7 @@ const FeedbackForm = () => {
       <div>
         <label>
           Comments:
-          <textarea className={styles.opinions}
+          <textarea className={styles.commentWrap}
             value={comments}
             onChange={(event) => setComments(event.target.value)}
             required

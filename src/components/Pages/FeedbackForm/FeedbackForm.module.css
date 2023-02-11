@@ -1,4 +1,4 @@
-form {
+.formWrap {
   color: white;
   width: 500px;
   margin: 0 auto;
@@ -14,7 +14,7 @@ form {
   );
 }
 
-h1 {
+.header {
   text-align: center;
   margin-bottom: 40px;
 }
@@ -25,27 +25,24 @@ label {
   margin-right: 20px;
 }
 
-input[type="text"],
-input[type="email"],
-
-.opinions {
+.formWrap input{
   width: 100%;
-  padding: 10px;
-  /* margin-bottom: 20px; */
-  border: 1px solid lightgray;
+  height: 40px;
   border-radius: 5px;
+  outline: none;
+  padding: 5px 5px;
 }
-
 select {
-  width: 104.5%;
-  padding: 10px;
+  width: 103%;
+  /* padding: 10px; */
   margin-bottom: 20px;
   border: 1px solid lightgray;
   border-radius: 5px;
   background-color: white;
+ height: 40px;
 }
 
-button[type="submit"] {
+button {
   width: 100%;
   padding: 10px;
   background: linear-gradient(
@@ -68,3 +65,15 @@ button[type="submit"]:hover {
     rgb(0, 0, 140) 100%
   );
 }
+
+.commentWrap{
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  padding: 5px 5px;
+}
+
+
+
