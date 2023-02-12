@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import styles from './Vote.module.css';
+import React, { useState } from "react";
+import styles from "./Vote.module.css";
 
 const Vote = () => {
   const [voteCount, setVoteCount] = useState(0);
