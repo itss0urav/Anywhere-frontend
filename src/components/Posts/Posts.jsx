@@ -4,9 +4,6 @@ const Posts = () => {
   return (
     <div className={styles.wrap}>
       <Post />
-      <Post />
-      <Post />
-      <Post />
     </div>
   );
 };

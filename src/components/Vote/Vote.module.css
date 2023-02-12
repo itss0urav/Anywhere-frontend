@@ -1,0 +1,25 @@
+.votecontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin: 20px auto;
+    flex-direction: column;
+  }
+  
+  .vote-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .vote-count {
+    font-size: 20px;
+    margin: 0 10px;
+    color: #333;
+  }
+  

@@ -10,6 +10,7 @@ import FeedbackForm from "./components/Pages/FeedbackForm/FeedbackForm";
 import Sidebar from "./components/Pages/Sidebar/Sidebar";
 import User from "./components/Pages/User/User";
 import Admin from "./components/Pages/Admin/Admin";
+import Vote from "./components/Vote/Vote";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="Sidebar" element={<Sidebar />} />
             <Route path="User" element={<User />} />
             <Route path="Admin" element={<Admin />} />
+            <Route path="Vote" element={<Vote />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

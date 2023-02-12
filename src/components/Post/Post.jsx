@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import styles from "./Post.module.css";
+import Vote from "../Vote/Vote";
 const Post = (postData) => {
   return (
     <div className={styles.postWrap}>
-      <div className={styles.arrowWrap}>
+      {/* <div className={styles.arrowWrap}>
         <i className="fa-solid fa-arrow-up"></i>
         <p>100</p>
         <i className="fa-solid fa-arrow-down"></i>
-      </div>
+      </div> */}
+      <Vote/>
+      
       <div className={styles.wrap}>
         <div className={styles.userNAme}>
           <p>Posted by Author</p>
