@@ -13,10 +13,10 @@ const Vote = () => {
   };
 
   return (
-    <div className={styles.vote-container}>
-      <i className="fa-solid fa-arrow-up"></i>
-      <span className={styles.vote-count}>{voteCount}</span>
-      <i className="fa-solid fa-arrow-down"></i>
+    <div className={styles.voteContainer}>
+      <i className="fa-solid fa-arrow-up" onClick={handleUpvote}></i>
+      <span className={styles.voteCount}>{voteCount}</span>
+      <i className="fa-solid fa-arrow-down" onClick={handleDownvote}></i>
     </div>
   );
 };

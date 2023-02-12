@@ -1,7 +1,7 @@
-.votecontainer {
+.voteContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+  gap: 15px;
     width: 200px;
     margin: 20px auto;
     flex-direction: column;
@@ -17,7 +17,7 @@
     outline: none;
   }
   
-  .vote-count {
+  .voteCount {
     font-size: 20px;
     margin: 0 10px;
     color: #333;
