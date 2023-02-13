@@ -1,4 +1,6 @@
 .voteContainer {
+  padding-top: 10px;
+
   display: flex;
   align-items: center;
   padding-left: 10px;

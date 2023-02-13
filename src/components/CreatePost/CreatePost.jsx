@@ -6,25 +6,26 @@ const Post = () => {
   const [image, setImage] = useState();
   const [link, setLink] = useState("");
   const [comment, setComment] = useState("");
-const [successMessage, setSuccessMessage] = useState("")
+  // const [successMessage, setSuccessMessage] = useState("");
+  const [category, setCategory] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSuccessMessage("Post Created successfully!");
+    // setSuccessMessage("Post Created successfully!");
     let newPost = {
       title,
-      imageUrl:image,
-      description:comment,
-      link
-    }
-    console.log(newPost)
+      imageUrl: image,
+      description: comment,
+      link,
+      category
+    };
+    console.log(newPost);
   };
 
   return (
+
     <form onSubmit={handleSubmit} className={styles.formWrap}>
       <h1 className={styles.header}>Create a Post</h1>
-      {successMessage ? (
-        <p style={{ color: "green" }}>{successMessage}</p>
-      ) : null}
+      
       <div>
         <label>
           Title:
@@ -55,7 +56,7 @@ const [successMessage, setSuccessMessage] = useState("")
       </div>
       <div>
         <label>
-          Comment:
+          Text:
           <textarea
             className={styles.commentWrap}
             value={comment}
@@ -64,8 +65,24 @@ const [successMessage, setSuccessMessage] = useState("")
           />
         </label>
       </div>
+      <div>
+        <label>
+          Category:
+          <input
+            type="text"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+            required
+          />
+        </label>
+      </div>
       <button type="submit">Submit</button>
+      {/* {successMessage ? (
+      <p style={{ color: "red" }}>{successMessage}</p>
+    ) : null} */}
     </form>
+
+    
   );
 };
 
