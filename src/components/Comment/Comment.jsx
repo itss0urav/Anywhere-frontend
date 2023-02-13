@@ -1,15 +1,9 @@
 import React, { useState } from "react";
-import styles from "./Post.module.css";
+import styles from "./Comment.module.css";
 import Vote from "../Vote/Vote";
-import { Link } from "react-router-dom";
 const Post = (postData) => {
   return (
     <div className={styles.postWrap}>
-      {/* <div className={styles.arrowWrap}>
-        <i className="fa-solid fa-arrow-up"></i>
-        <p>100</p>
-        <i className="fa-solid fa-arrow-down"></i>
-      </div> */}
       <Vote/>
       
       <div className={styles.wrap}>
@@ -29,9 +23,6 @@ const Post = (postData) => {
         "Ikka fans" refers to fans of Indian film actor Mammootty. He is a prominent film actor in the Indian film industry, particularly in the Malayalam film industry. He has acted in over 400 films and is considered one of the greatest actors in Indian cinema. His fans admire his acting skills, versatility, and charismatic screen presence. They are passionate about his movies and follow his work closely.
         </p>
         <div className={styles.feedBacks}>
-        <Link to="/Comment">
-        <i class="fa-solid fa-comment-dots"></i>
-        </Link>
         </div>
       </div>
     </div>
