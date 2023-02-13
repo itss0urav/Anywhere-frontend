@@ -34,7 +34,6 @@ function App() {
             <Route path="Admin" element={<Admin />} />
             <Route path="Vote" element={<Vote />} />
             <Route path="CreatePost" element={<CreatePost />} />
-            
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
