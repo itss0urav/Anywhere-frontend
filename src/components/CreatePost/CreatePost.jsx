@@ -3,17 +3,20 @@ import styles from "./CreatePost.module.css";
 
 const Post = () => {
   const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState();
   const [link, setLink] = useState("");
   const [comment, setComment] = useState("");
-
+const [successMessage, setSuccessMessage] = useState("")
   const handleSubmit = (event) => {
     event.preventDefault();
     setSuccessMessage("Post Created successfully!");
-    setTitle("");
-    setComments("");
-    setImage("");
-    setLink("");
+    let newPost = {
+      title,
+      imageUrl:image,
+      description:comment,
+      link
+    }
+    console.log(newPost)
   };
 
   return (
@@ -37,8 +40,7 @@ const Post = () => {
         Image:
         <input
           type="file"
-          value={image}
-          onChange={(event) => setImage(event.target.value)}
+          onChange={(event) => setImage(event.target.files[0])}
         />
       </label>
       <div>
