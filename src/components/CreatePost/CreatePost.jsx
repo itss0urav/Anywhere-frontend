@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./CreatePost.module.css";
-
+import { storage } from "../../firebase/config";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 const Post = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState();
@@ -8,24 +9,30 @@ const Post = () => {
   const [comment, setComment] = useState("");
   // const [successMessage, setSuccessMessage] = useState("");
   const [category, setCategory] = useState("");
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // setSuccessMessage("Post Created successfully!");
+    const fileName = Date.now() + image.name
+    const storageRef = ref(storage, fileName);
+    await uploadBytes(storageRef, image).then((snapshot) => {
+      console.log(snapshot);
+    });
+
+    const imgUrl = await getDownloadURL(ref(storage,fileName))
+
     let newPost = {
       title,
-      imageUrl: image,
+      imgUrl,
       description: comment,
       link,
-      category
+      category,
     };
     console.log(newPost);
   };
 
   return (
-
     <form onSubmit={handleSubmit} className={styles.formWrap}>
       <h1 className={styles.header}>Create a Post</h1>
-      
+
       <div>
         <label>
           Title:
@@ -81,8 +88,6 @@ const Post = () => {
       <p style={{ color: "red" }}>{successMessage}</p>
     ) : null} */}
     </form>
-
-    
   );
 };
 

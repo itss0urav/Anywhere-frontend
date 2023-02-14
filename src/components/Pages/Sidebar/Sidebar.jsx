@@ -8,23 +8,13 @@ const Sidebar = () => {
     { id: 3, name: "Bob Smith" },
   ]);
 
-  useEffect(() => {
-    document.querySelectorAll("li").forEach((item) => {
-      item.addEventListener("mouseenter", (event) => {
-        event.target.style.backgroundColor = "lightblue";
-      });
-      item.addEventListener("mouseleave", (event) => {
-        event.target.style.backgroundColor = "";
-      });
-    });
-  });
-
+  
   return (
-    <aside className="sidebar">
-      <h2 className="sidebar-title">Users</h2>
-      <ul className="user-list">
+    <aside className={styles.sidebar}>
+      <h2 className={styles.sidebartitle}>Users</h2>
+      <ul className={styles.userlist}>
         {users.map((user) => (
-          <li key={user.id} className="user-item">
+          <li key={user.id} className={styles.wrapper}>
             {user.name}
           </li>
         ))}

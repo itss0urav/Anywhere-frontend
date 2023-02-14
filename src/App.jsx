@@ -22,14 +22,16 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navbar />}>
-              <Route path="/" element={<Posts />} />
-              <Route path="/" element={<Sidebar />} />
+              <Route path="/" element={
+              <Posts />
+              } />
+              {/* <Route path="/" element={} /> */}
               <Route path="/comment" element={<Comment />} />
             </Route>
             <Route path="logIn" element={<Login />} />
             <Route path="signUp" element={<SignUp />} />
             <Route path="FeedbackForm" element={<FeedbackForm />} />
-            <Route path="Sidebar" element={<Sidebar />} />
+            {/* <Route path="Sidebar" element={<Sidebar />} /> */}
             <Route path="User" element={<User />} />
             <Route path="Admin" element={<Admin />} />
             <Route path="Vote" element={<Vote />} />
