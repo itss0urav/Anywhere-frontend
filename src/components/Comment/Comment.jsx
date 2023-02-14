@@ -22,8 +22,6 @@ const Post = (postData) => {
         <p className={styles.desc}>
         "Ikka fans" refers to fans of Indian film actor Mammootty. He is a prominent film actor in the Indian film industry, particularly in the Malayalam film industry. He has acted in over 400 films and is considered one of the greatest actors in Indian cinema. His fans admire his acting skills, versatility, and charismatic screen presence. They are passionate about his movies and follow his work closely.
         </p>
-        <div className={styles.feedBacks}>
-        </div>
       </div>
     </div>
   );

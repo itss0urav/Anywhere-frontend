@@ -4,10 +4,10 @@
   align-items: center;
   height: 30rem;
   gap: 10px;
-  width: 50rem;
+  width: 70%;
   text-align: start;
   background-color: #ffff;
-  border-radius: 10px;
+
 }
 .imageWrap {
   
@@ -35,10 +35,10 @@
 }
 .postWrap {
   display: flex;
-  background-color: #ffff;
-  /* gap: 15px; */
+  /* width: 50%; */
   padding: 0px 0px;
   font-family: Lato;
+  justify-content: center;
 }
 .arrowWrap {
   color:white;
