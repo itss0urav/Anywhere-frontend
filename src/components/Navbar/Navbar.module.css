@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 1rem 2rem;
+  padding: 7px 2rem;
   background: linear-gradient(
     90deg,
     rgb(0, 0, 0) 0%,
@@ -29,7 +29,7 @@
 }
 
 .createPostBtn{
-  padding: 5px 20px;
+  padding: 3px 25px;
   border: none;
   color: rgb(0, 0, 0);
   border-radius: 5px;
@@ -49,7 +49,7 @@
 
 
 .authBtn {
-  padding: 5px 10px;
+  padding: 9px 11px;
   border: none;
   background-color: #0079d3;
   color: white;

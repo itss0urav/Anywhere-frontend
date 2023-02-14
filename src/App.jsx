@@ -13,6 +13,7 @@ import Admin from "./components/Pages/Admin/Admin";
 import Vote from "./components/Vote/Vote";
 import Comment from "./components/Comment/Comment";
 import CreatePost from "./components/CreatePost/CreatePost";
+import Categories from "./components/Categories/Categories";
 
 const queryClient = new QueryClient();
 function App() {
@@ -27,6 +28,7 @@ function App() {
               } />
               {/* <Route path="/" element={} /> */}
               <Route path="/comment" element={<Comment />} />
+              <Route path="/Categories" element={<Categories />} />
             </Route>
             <Route path="logIn" element={<Login />} />
             <Route path="signUp" element={<SignUp />} />
@@ -36,6 +38,8 @@ function App() {
             <Route path="Admin" element={<Admin />} />
             <Route path="Vote" element={<Vote />} />
             <Route path="CreatePost" element={<CreatePost />} />
+            
+            
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
