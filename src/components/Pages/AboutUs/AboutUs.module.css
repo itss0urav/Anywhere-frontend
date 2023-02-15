@@ -1,0 +1,16 @@
+.aboutus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  
+  }
+  
+  .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+  

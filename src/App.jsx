@@ -14,6 +14,7 @@ import Vote from "./components/Vote/Vote";
 import Comment from "./components/Comment/Comment";
 import CreatePost from "./components/CreatePost/CreatePost";
 import Categories from "./components/Categories/Categories";
+import AboutUs from "./components/Pages/AboutUs/AboutUs";
 
 const queryClient = new QueryClient();
 function App() {
@@ -27,6 +28,7 @@ function App() {
               {/* <Route path="/" element={} /> */}
               <Route path="/comment" element={<Comment />} />
               <Route path="/Categories" element={<Categories />} />
+              <Route path="/AboutUs" element={<AboutUs />} />
             </Route>
             <Route path="logIn" element={<Login />} />
             <Route path="signUp" element={<SignUp />} />
