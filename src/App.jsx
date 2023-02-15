@@ -23,9 +23,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navbar />}>
-              <Route path="/" element={
-              <Posts />
-              } />
+              <Route path="/" element={<Posts />} />
               {/* <Route path="/" element={} /> */}
               <Route path="/comment" element={<Comment />} />
               <Route path="/Categories" element={<Categories />} />
@@ -38,8 +36,6 @@ function App() {
             <Route path="Admin" element={<Admin />} />
             <Route path="Vote" element={<Vote />} />
             <Route path="CreatePost" element={<CreatePost />} />
-            
-            
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>

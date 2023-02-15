@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Categories.module.css';
 
-const CategoryList = ({ categories }) => (
+const Categories = ({ categories }) => (
   <div className={styles.categorylist}>
     <h2 className={styles.categorylisttitle}>Categories</h2>
     <ul className={styles.categorylistitems}>
@@ -12,4 +12,4 @@ const CategoryList = ({ categories }) => (
   </div>
 );
 
-export default CategoryList;
+export default Categories;
