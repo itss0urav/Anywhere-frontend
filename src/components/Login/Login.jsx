@@ -4,14 +4,20 @@ import styles from "./Login.module.css";
 import { useMutation } from "react-query";
 import { AuthService } from "../../services/";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 const Login = () => {
   const authenticate = new AuthService();
-  const userNameRef = useRef();
+  const navigate = useNavigate()
+  const { acessToken, setAccessToken, setUser } = useContext(UserContext);
   const emailRef = useRef();
   const passwordRef = useRef();
   const { mutate } = useMutation(authenticate.loginUser, {
     onSuccess: (data) => {
-      console.log(data);
+      setAccessToken(data.accessToken);
+      localStorage.setItem("anywhere-user", data.username)
+      setUser(data.username)
+      navigate("/")
     },
   });
 

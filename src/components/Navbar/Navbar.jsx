@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 import { Outlet, Link } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
+import { AuthService } from "../../services";
 const Navbar = () => {
+  const {user, setUser} = useContext(UserContext)
   return (
     <>
       <div className={styles.wrapper}>
@@ -25,19 +29,34 @@ const Navbar = () => {
             </div>
           </div>
           {/* Secode section */}
+         
           <div className={styles.secTwoWrap}>
-            <Link to="/CreatePost">
-              <button className={styles.createPostBtn}>Create Post</button>
-            </Link>
-            <Link to="/login">
+          {
+            !user ? (
+              <>
+              
+              <Link to="/login">
               <button className={styles.authBtn}>Login</button>
             </Link>
             <Link to="/signUp">
               <button className={styles.authBtn}>SignUp</button>
             </Link>
-            <Link to="/user">
+              </>
+            ):(
+              <>
+              <Link to="/user">
               <i class="fa-solid fa-user userIcon "></i>
-            </Link>
+              </Link>
+              {user}
+              <i class="fa-solid fa-right-from-bracket" onClick={() => {
+                localStorage.removeItem("anywhere-user")
+                setUser(null)
+              }}></i>
+              </>
+            )
+          }
+            
+          
           </div>
         </div>
       </div>

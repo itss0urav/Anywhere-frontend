@@ -20,9 +20,13 @@ export class AuthService {
       const result = await axios.post(`${BASE_URL}/auth/login`, userDetails, {
         withCredentials: true,
       });
-      return result;
+      return result.data;
     } catch (err) {
       console.log(err);
     }
+  }
+
+  async logOutUser(){
+    localStorage.removeItem("anywhere-user")
   }
 }
