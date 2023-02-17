@@ -3,9 +3,9 @@
   display: grid;
   place-content: center;
 }
-.innerWrappper{
+.innerWrappper {
   color: aliceblue;
-  display:flex;
+  display: flex;
   flex-direction: column;
   background: linear-gradient(
     90deg,
@@ -20,36 +20,34 @@
 }
 
 .user-profile {
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .user-profile-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .user-profile-name {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .user-profile-posts {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  
-  .user-profile-votes {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .user-profile-creation-time {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.user-profile-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-profile-name {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user-profile-posts {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user-profile-votes {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user-profile-creation-time {
+  font-size: 18px;
+  margin-bottom: 10px;
+}

@@ -10,12 +10,12 @@ const AdminPage = () => {
     // setPosts(response.data.posts)
   }, []);
 
-  const handleDeletePost = postId => {
+  const handleDeletePost = (postId) => {
     // Call API to delete post with postId
     // setPosts(prevPosts => prevPosts.filter(post => post.id !== postId))
   };
 
-  const handleBanUser = userId => {
+  const handleBanUser = (userId) => {
     // Call API to ban user with userId
     // setUsers(prevUsers => prevUsers.map(user => {
     //   if (user.id === userId) {
@@ -29,7 +29,7 @@ const AdminPage = () => {
     <div>
       <h2>Users</h2>
       <ul>
-        {users.map(user => (
+        {users.map((user) => (
           <li key={user.id}>
             {user.username}
             {user.banned ? "(banned)" : ""}
@@ -38,13 +38,13 @@ const AdminPage = () => {
         ))}
       </ul>
       <h2>Posts</h2>
-      {users.map(user => (
+      {users.map((user) => (
         <div key={user.id}>
           <h3>{user.username}</h3>
           <ul>
             {posts
-              .filter(post => post.userId === user.id)
-              .map(post => (
+              .filter((post) => post.userId === user.id)
+              .map((post) => (
                 <li key={post.id}>
                   {post.title}
                   <button onClick={() => handleDeletePost(post.id)}>

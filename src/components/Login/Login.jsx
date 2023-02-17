@@ -8,16 +8,16 @@ import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 const Login = () => {
   const authenticate = new AuthService();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { acessToken, setAccessToken, setUser } = useContext(UserContext);
   const emailRef = useRef();
   const passwordRef = useRef();
   const { mutate } = useMutation(authenticate.loginUser, {
     onSuccess: (data) => {
       setAccessToken(data.accessToken);
-      localStorage.setItem("anywhere-user", data.username)
-      setUser(data.username)
-      navigate("/")
+      localStorage.setItem("anywhere-user", data.username);
+      setUser(data.username);
+      navigate("/");
     },
   });
 

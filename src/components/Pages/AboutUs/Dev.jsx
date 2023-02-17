@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Dev.module.css';
+import React from "react";
+import styles from "./Dev.module.css";
 
 function Developer(props) {
   const { photo, name, title } = props;

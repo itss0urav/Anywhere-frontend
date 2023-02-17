@@ -47,7 +47,11 @@ const FeedbackForm = () => {
       <div>
         <label>
           Rating:
-          <select value={rating} onChange={(event) => setRating(event.target.value)} required>
+          <select
+            value={rating}
+            onChange={(event) => setRating(event.target.value)}
+            required
+          >
             <option value={0}>Select a Rating</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -60,7 +64,8 @@ const FeedbackForm = () => {
       <div>
         <label>
           Comments:
-          <textarea className={styles.commentWrap}
+          <textarea
+            className={styles.commentWrap}
             value={comments}
             onChange={(event) => setComments(event.target.value)}
             required

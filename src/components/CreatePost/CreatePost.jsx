@@ -11,13 +11,13 @@ const Post = () => {
   const [category, setCategory] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const fileName = Date.now() + image.name
+    const fileName = Date.now() + image.name;
     const storageRef = ref(storage, fileName);
     await uploadBytes(storageRef, image).then((snapshot) => {
       console.log(snapshot);
     });
 
-    const imgUrl = await getDownloadURL(ref(storage,fileName))
+    const imgUrl = await getDownloadURL(ref(storage, fileName));
 
     let newPost = {
       title,

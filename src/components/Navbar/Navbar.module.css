@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-.createPostBtn{
+.createPostBtn {
   padding: 3px 25px;
   border: none;
   color: rgb(0, 0, 0);
@@ -42,11 +42,7 @@
     rgb(0, 204, 222) 70%,
     rgb(20, 0, 81) 100%
   );
-
-
 }
-
-
 
 .authBtn {
   padding: 9px 11px;

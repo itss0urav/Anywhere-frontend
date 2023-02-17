@@ -7,10 +7,8 @@
   width: 70%;
   text-align: start;
   background-color: #ffff;
-
 }
 .imageWrap {
-  
   height: 55%;
   width: 90%;
 }
@@ -41,7 +39,7 @@
   justify-content: center;
 }
 .arrowWrap {
-  color:white;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +68,7 @@
   margin-top: 20px;
   margin-left: 20px;
 }
-.desc{
+.desc {
   padding-left: 36px;
   padding-right: 36px;
 }

@@ -1,4 +1,4 @@
-import styles from './Sidebar.module.css';
+import styles from "./Sidebar.module.css";
 import React, { useState, useEffect } from "react";
 
 const Sidebar = () => {
@@ -8,7 +8,6 @@ const Sidebar = () => {
     { id: 3, name: "Bob Smith" },
   ]);
 
-  
   return (
     <aside className={styles.sidebar}>
       <h2 className={styles.sidebartitle}>Users</h2>

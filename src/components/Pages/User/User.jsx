@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./User.module.css";
 import Vote from "../../Vote/Vote";
 
-const UserProfile = ({ name, totalPosts, voteCount, timeOfAccountCreation }) => {
+const UserProfile = ({
+  name,
+  totalPosts,
+  voteCount,
+  timeOfAccountCreation,
+}) => {
   return (
     <div className={styles.wrappper}>
       <div className={styles.innerWrappper}>

@@ -24,7 +24,7 @@ export class AuthService {
     }
   }
 
-  async logOutUser(){
-    localStorage.removeItem("anywhere-user")
+  async logOutUser() {
+    localStorage.removeItem("anywhere-user");
   }
 }

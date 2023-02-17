@@ -1,35 +1,31 @@
 .sidebar {
   border-radius: 3%;
-    width: 200px;
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(
     90deg,
     rgb(0, 0, 0) 0%,
     rgb(7, 7, 125) 50%,
     rgb(0, 0, 0) 100%
   );
   color: white;
-    
-  }
-  
-  .sidebartitle {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    
-    
-  }
-  
-  .userlist {
-    list-style: none;
-    padding: 0;
-    padding-left: 30%;
-    
-  }
-  
-  .useritem {
-    padding: 10px;
-    font-size: 14px;
-    cursor: pointer;
-  }
+}
+
+.sidebartitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.userlist {
+  list-style: none;
+  padding: 0;
+  padding-left: 30%;
+}
+
+.useritem {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
