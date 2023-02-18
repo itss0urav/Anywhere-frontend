@@ -1,12 +1,24 @@
 .reportpost {
+  color: white;
     padding: 20px;
-    background-color: #f5f5f5;
+    background: linear-gradient(
+    90deg,
+    rgb(6, 0, 26) 0%,
+    rgb(5, 0, 93) 15%,
+    #1b0fff 50%,
+    rgb(0, 0, 93) 85%,
+    rgb(6, 0, 26) 100%
+  );
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
   
   .reportpost h2 {
+    text-align: center;
     font-size: 1.5em;
     margin-top: 0;
   }

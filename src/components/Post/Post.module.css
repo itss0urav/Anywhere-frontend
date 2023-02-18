@@ -65,10 +65,15 @@
   width: 100%;
   display: flex;
   justify-content: start;
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 70px;
 }
+.reports{
+  margin-left: 30px;
+  font-size: 15px;
+}
+
 .desc {
   padding-left: 36px;
   padding-right: 36px;

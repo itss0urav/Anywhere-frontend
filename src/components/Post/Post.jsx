@@ -34,11 +34,13 @@ const Post = (postData) => {
         </p>
         <div className={styles.feedBacks}>
           <Link to="/Comment">
-            <i class="fa-solid fa-comment-dots"></i>
+            <i class="fa-solid fa-comment-dots"></i>Comments
           </Link>
+          <div className={styles.reports}>
           <Link to="/ReportPost">
-            <i class="fa-solid fa-comment-dots"></i>
+          <i class="fa-solid fa-triangle-exclamation"></i>Report
           </Link>
+          </div>
         </div>
       </div>
     </div>
