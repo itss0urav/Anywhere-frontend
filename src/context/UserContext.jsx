@@ -1,23 +1,21 @@
 import { createContext, useState } from "react";
 
 const INITIAL_STATE = {
-  acessToken: null,
-  user: localStorage.getItem("anywhere-user") || null,
+  
+  user:JSON.parse(localStorage.getItem("anywhere-user"))?.username || null,
   setUser: () => {},
-  setAccessToken: () => {},
+ 
 };
 export const UserContext = createContext(INITIAL_STATE);
 
 export const UserContextProvider = ({ children }) => {
-  const [user, setUser] = useState(localStorage.getItem("anywhere-user"));
-  const [acessToken, setAccessToken] = useState();
+  console.log(localStorage.getItem("anywhere-user"))
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("anywhere-user"))?.username || null);
   return (
     <UserContext.Provider
       value={{
         user,
         setUser: setUser,
-        acessToken,
-        setAccessToken: setAccessToken,
       }}
     >
       {children}

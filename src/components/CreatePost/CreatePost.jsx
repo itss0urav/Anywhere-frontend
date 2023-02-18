@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./CreatePost.module.css";
 import { storage } from "../../firebase/config";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { useMutation } from "react-query";
+import { PostServices } from "../../services/postServices";
+import { useNavigate } from "react-router-dom";
 const Post = () => {
-  const [title, setTitle] = useState("");
+  const titleRef = useRef();
+  const descriptionRef = useRef();
+  const categoryRef = useRef();
+  const linkRef = useRef();
   const [image, setImage] = useState();
-  const [link, setLink] = useState("");
-  const [comment, setComment] = useState("");
-  // const [successMessage, setSuccessMessage] = useState("");
-  const [category, setCategory] = useState("");
+  const navigate = useNavigate()
+  const postServices = new PostServices();
+  const { mutate } = useMutation(postServices.createPost, {
+    onSuccess: (data) =>console.log(data),
+  });
+
+
+  //Function to create a new post
   const handleSubmit = async (event) => {
     event.preventDefault();
     const fileName = Date.now() + image.name;
@@ -20,13 +30,13 @@ const Post = () => {
     const imgUrl = await getDownloadURL(ref(storage, fileName));
 
     let newPost = {
-      title,
-      imgUrl,
-      description: comment,
-      link,
-      category,
+      title: titleRef.current.value,
+      imageUrl: imgUrl,
+      description: descriptionRef.current.value,
+      link: linkRef.current.value,
+      // category: categoryRef.current.value,
     };
-    console.log(newPost);
+     mutate(newPost);
   };
 
   return (
@@ -36,12 +46,7 @@ const Post = () => {
       <div>
         <label>
           Title:
-          <input
-            type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            required
-          />
+          <input type="text" ref={titleRef} required />
         </label>
       </div>
       <label>
@@ -54,11 +59,7 @@ const Post = () => {
       <div>
         <label>
           Link:
-          <input
-            type="text"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
-          />
+          <input type="text"  ref={linkRef} />
         </label>
       </div>
       <div>
@@ -66,8 +67,8 @@ const Post = () => {
           Text:
           <textarea
             className={styles.commentWrap}
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
+            
+            ref={descriptionRef}
             required
           />
         </label>
@@ -75,18 +76,10 @@ const Post = () => {
       <div>
         <label>
           Category:
-          <input
-            type="text"
-            value={category}
-            onChange={(event) => setCategory(event.target.value)}
-            required
-          />
+          <input type="text" ref={categoryRef} required />
         </label>
       </div>
       <button type="submit">Submit</button>
-      {/* {successMessage ? (
-      <p style={{ color: "red" }}>{successMessage}</p>
-    ) : null} */}
     </form>
   );
 };

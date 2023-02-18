@@ -9,13 +9,13 @@ import { useContext } from "react";
 const Login = () => {
   const authenticate = new AuthService();
   const navigate = useNavigate();
-  const { acessToken, setAccessToken, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const emailRef = useRef();
   const passwordRef = useRef();
   const { mutate } = useMutation(authenticate.loginUser, {
     onSuccess: (data) => {
-      setAccessToken(data.accessToken);
-      localStorage.setItem("anywhere-user", data.username);
+     
+      localStorage.setItem("anywhere-user", JSON.stringify(data));
       setUser(data.username);
       navigate("/");
     },

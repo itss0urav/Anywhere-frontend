@@ -3,7 +3,7 @@ import styles from "./Navbar.module.css";
 import { Outlet, Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
-import { AuthService } from "../../services";
+
 const Navbar = () => {
   const { user, setUser } = useContext(UserContext);
   return (
