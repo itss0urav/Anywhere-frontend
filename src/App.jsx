@@ -15,6 +15,8 @@ import Comment from "./components/Comment/Comment";
 import CreatePost from "./components/CreatePost/CreatePost";
 import Categories from "./components/Categories/Categories";
 import AboutUs from "./components/Pages/AboutUs/AboutUs";
+import Cmt from "./components/Comment/cmt";
+import ReportPost from "./components/Report/ReportPost";
 
 const queryClient = new QueryClient();
 function App() {
@@ -29,6 +31,8 @@ function App() {
               <Route path="/comment" element={<Comment />} />
 
               <Route path="/AboutUs" element={<AboutUs />} />
+              <Route path="/cmt" element={<Cmt />} />
+              <Route path="/ReportPost" element={<ReportPost />} />
             </Route>
             <Route path="logIn" element={<Login />} />
             <Route path="signUp" element={<SignUp />} />

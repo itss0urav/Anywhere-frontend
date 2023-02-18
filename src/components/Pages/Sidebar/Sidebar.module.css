@@ -13,7 +13,7 @@
 }
 
 .sidebartitle {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   margin-bottom: 20px;
 }
@@ -21,7 +21,7 @@
 .userlist {
   list-style: none;
   padding: 0;
-  padding-left: 30%;
+  padding-left: 20%;
 }
 
 .useritem {

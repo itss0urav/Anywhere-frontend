@@ -36,6 +36,9 @@ const Post = (postData) => {
           <Link to="/Comment">
             <i class="fa-solid fa-comment-dots"></i>
           </Link>
+          <Link to="/ReportPost">
+            <i class="fa-solid fa-comment-dots"></i>
+          </Link>
         </div>
       </div>
     </div>

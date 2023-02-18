@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 
 const Sidebar = () => {
   const [users, setUsers] = useState([
-    { id: 1, name: "John Doe" },
-    { id: 2, name: "Jane Doe" },
-    { id: 3, name: "Bob Smith" },
+    { id: 1, name: "Obama" },
+    { id: 2, name: "Robert Downey Jr" },
+    { id: 3, name: "Will Smith" },
   ]);
-
+  
   return (
     <aside className={styles.sidebar}>
       <h2 className={styles.sidebartitle}>Users</h2>
