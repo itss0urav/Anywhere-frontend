@@ -9,4 +9,13 @@ export class PostServices {
     });
     if(res) return res.data
   }
+
+  async getPosts(){
+    const res = await callApi({
+      method:"get",
+      relativePath:"/post"
+    })
+    if(res) return res.data
+
+  }
 }

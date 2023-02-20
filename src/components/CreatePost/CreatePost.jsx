@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import styles from "./CreatePost.module.css";
 import { storage } from "../../firebase/config";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { PostServices } from "../../services/postServices";
 import { useNavigate } from "react-router-dom";
 const Post = () => {
@@ -12,9 +12,13 @@ const Post = () => {
   const linkRef = useRef();
   const [image, setImage] = useState();
   const navigate = useNavigate()
+  const queryClient = useQueryClient()
   const postServices = new PostServices();
   const { mutate } = useMutation(postServices.createPost, {
-    onSuccess: (data) =>console.log(data),
+    onSuccess: (data) =>{
+      queryClient.invalidateQueries("posts")
+     navigate("/")
+    },
   });
 
 
