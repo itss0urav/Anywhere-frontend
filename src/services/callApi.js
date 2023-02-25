@@ -12,7 +12,7 @@ export async function callApi(data) {
       url: `${BASE_URL}${relativePath}`,
       data:apiData,
       headers: {
-        Authorization: `Bearer ${loggedInUser.accessToken}`,
+        Authorization: `Bearer ${loggedInUser?.accessToken}`,
       },
     });
 
