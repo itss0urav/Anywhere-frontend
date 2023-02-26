@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 30rem;
+  /* height: 30rem; */
   gap: 10px;
   width: 50rem;
   text-align: start;
@@ -10,7 +10,7 @@
   border-radius: 10px;
 }
 .imageWrap {
-  height: 55%;
+  height: 65%;
   width: 90%;
 }
 .imageWrap img {
@@ -68,6 +68,7 @@
   font-size: 15px;
   margin-top: 20px;
   margin-left: 70px;
+  margin-bottom: 30px;
 }
 .reports{
   margin-left: 30px;

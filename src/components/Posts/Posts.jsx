@@ -15,7 +15,10 @@ const Posts = () => {
   useQuery({
     queryFn:postServices.getPosts,
     queryKey:["posts"],
-    onSuccess:(data) => setPosts(data)
+    onSuccess:(data) => {
+      console.log(data);
+      setPosts(data)
+    }
   })
 
   return (
