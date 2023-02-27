@@ -1,9 +1,9 @@
 .wrappper {
-  height: 100vh;
+  margin: 2rem;
   display: grid;
-  place-content: center;
 }
 .innerWrappper {
+  
   color: aliceblue;
   display: flex;
   flex-direction: column;

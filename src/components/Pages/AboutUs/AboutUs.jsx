@@ -1,6 +1,6 @@
 import React from "react";
 import Developer from "./Dev";
-import "./AboutUs.module.css";
+import styles from "./AboutUs.module.css";
 
 function AboutUs() {
   const developers = [
@@ -8,32 +8,32 @@ function AboutUs() {
       id: 1,
       name: "Sourav S",
       title: "Lead Developer",
-      photo: "developer1.jpg",
+      photo: "https://media.discordapp.net/attachments/1070984839077036052/1079693185279864882/1.png?width=911&height=606",
     },
     {
       id: 2,
       name: "Amal Sam jacob",
       title: "Documentation Lead",
       photo:
-        "https://cdn.discordapp.com/attachments/979241917852303370/1038321889023631440/IMG_20221105_104954.jpg",
+        "https://media.discordapp.net/attachments/1070984839077036052/1079692614942597170/3.png?width=911&height=544",
     },
     {
       id: 3,
       name: "Gokul P Sabu",
       title: "Co - Developer",
-      photo: "developer3.jpg",
+      photo: "https://media.discordapp.net/attachments/1070984839077036052/1079693494949527572/2.png?width=911&height=604",
     },
     {
       id: 3,
       name: "Sharon Shine",
       title: "Feasibility Study and Hardware and Software Management",
-      photo: "developer3.jpg",
+      photo: "https://pps.whatsapp.net/v/t61.24694-24/328166462_108475168843236_6552277634280518597_n.jpg?ccb=11-4&oh=01_AdSQSrLUVGKCX8KQWizu8rE-cgg24pbbdyQRGZTZkVezKQ&oe=64096D1F",
     },
   ];
   return (
-    <div className="about-us">
+    <div className={styles.aboutus}>
       <h1>About Us</h1>
-      <section className="team">
+      <section className={styles.team}>
         {developers.map((developer) => (
           <Developer
             key={developer.id}

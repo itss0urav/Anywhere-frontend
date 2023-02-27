@@ -17,6 +17,7 @@ import Categories from "./components/Categories/Categories";
 import AboutUs from "./components/Pages/AboutUs/AboutUs";
 import Cmt from "./components/Comment/cmt";
 import ReportPost from "./components/Report/ReportPost";
+import Verified from "./components/Verified/Verified";
 
 const queryClient = new QueryClient();
 function App() {
@@ -29,7 +30,7 @@ function App() {
               <Route path="/" element={<Posts />} />
               {/* <Route path="/" element={} /> */}
               <Route path="/comment" element={<Comment />} />
-
+              <Route path="/Verified" element={<Verified />} />
               <Route path="/AboutUs" element={<AboutUs />} />
               <Route path="/cmt" element={<Cmt />} />
               <Route path="/ReportPost" element={<ReportPost />} />

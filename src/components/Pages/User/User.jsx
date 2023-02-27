@@ -2,14 +2,13 @@ import React from "react";
 import styles from "./User.module.css";
 import Vote from "../../Vote/Vote";
 import { useContext } from "react";
-import { UserContext } from './../../../context/UserContext';
+import { UserContext } from "./../../../context/UserContext";
+import { Link } from "react-router-dom";
+import AboutUs from "./../AboutUs/AboutUs";
+import FeedbackForm from "./../FeedbackForm/FeedbackForm";
 
-const UserProfile = ({
-  totalPosts,
-  voteCount,
-  timeOfAccountCreation,
-}) => {
-  const {user} = useContext(UserContext)
+const UserProfile = ({ totalPosts, voteCount, timeOfAccountCreation }) => {
+  const { user } = useContext(UserContext);
   return (
     <div className={styles.wrappper}>
       <div className={styles.innerWrappper}>
@@ -21,6 +20,15 @@ const UserProfile = ({
           Time of Account Creation: {timeOfAccountCreation}
         </p>
       </div>
+      <Link to="/Verified">
+        <button className={styles.authBtn}>Apply For Verification</button>
+      </Link>
+      <Link to="/AboutUs">
+        <button className={styles.authBtn}>AboutUs</button>
+      </Link>
+      <Link to="/FeedbackForm">
+        <button className={styles.authBtn}>FeedbackForm</button>
+      </Link>
     </div>
   );
 };
