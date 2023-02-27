@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Post.module.css";
 import Vote from "../Vote/Vote";
 import { Link } from "react-router-dom";
-const Post = ({ imgUrl, title, description, link }) => {
+const Post = ({ imgUrl, title, description}) => {
   return (
     <div className={styles.postWrap}>
       <Vote />
@@ -15,9 +15,6 @@ const Post = ({ imgUrl, title, description, link }) => {
         <div className={styles.imageWrap}>
           <img src={imgUrl} alt="computer" />
         </div>
-        {/* testing start */}
-        <p className={styles.desc}>{link}</p>
-        {/* testing end */}
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>
           <Link to="/Comment">
