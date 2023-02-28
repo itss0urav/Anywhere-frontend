@@ -10,7 +10,13 @@
   gap: 20px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
   padding: 5rem 5rem;
-  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  background: linear-gradient(
+    90deg,
+    rgb(0, 0, 0) 0%,
+    rgb(7, 7, 125) 50%,
+    rgb(0, 0, 0) 100%
+  );
+  color: white;
 }
 .formWrap input {
   outline: none;
@@ -21,7 +27,7 @@
   border-width: 2px;
   padding: 0px 1rem;
   background-color: transparent;
-  color: #000;
+  color: #ffffff;
   box-shadow: 0 1px 8px rgba(0, 165, 241, 0.8);
 }
 

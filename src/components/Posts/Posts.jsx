@@ -7,6 +7,7 @@ import Sidebar from "../Pages/Sidebar/Sidebar";
 import { useQuery } from "react-query";
 import Categories from "../Categories/Categories";
 import { PostServices } from "../../services/postServices";
+import { Outlet, Link } from "react-router-dom";
 const Posts = () => {
   const { user } = useContext(UserContext);
   const [posts, setPosts] = useState([]);
@@ -33,9 +34,23 @@ const Posts = () => {
             />
           ))}
         </div>
-
-        <Sidebar />
-        <Categories />
+        <div className={styles.sideCompWrapper}>
+          {!user ? (
+            <>
+              <Link to="/Login">
+                <button className={styles.createPostBtn}>
+                  Login to CreatePost
+                </button>
+              </Link>
+            </>
+          ) : (
+            <Link to="/CreatePost">
+              <button className={styles.createPostBtn}>CreatePost</button>
+            </Link>
+          )}
+          <Sidebar />
+          <Categories />
+        </div>
       </div>
     </div>
   );

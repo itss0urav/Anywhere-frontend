@@ -9,4 +9,17 @@
 .innerWrap {
   display: flex;
   gap: 20px;
+  
+}
+.createPostWrapper {
+  display: flex;
+  flex-direction: row;
+  
+}
+.createPostBtn{
+  width: 100%;
+
+}
+.sideCompWrapper{
+  padding-left: 2rem;
 }

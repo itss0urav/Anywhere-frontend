@@ -13,12 +13,12 @@ const Navbar = () => {
           {/* First section */}
           <div className={styles.secOneWrap}>
             <p>
-            <Link to="/">
-              <img
-                src="https://media.discordapp.net/attachments/1070984839077036052/1070994572068524032/ALUT.png"
-                width="45"
-                height="27"
-              ></img>
+              <Link to="/">
+                <img
+                  src="https://media.discordapp.net/attachments/1070984839077036052/1070994572068524032/ALUT.png"
+                  width="45"
+                  height="27"
+                ></img>
               </Link>
             </p>
             <div className={styles.searchBoxWrap}>
