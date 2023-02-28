@@ -57,6 +57,7 @@
   cursor: pointer;
 }
 .serachBox {
+  margin-top: 1rem;
   outline: none;
   height: 1.7rem;
   border-radius: 5px;

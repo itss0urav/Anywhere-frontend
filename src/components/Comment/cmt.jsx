@@ -1,44 +1,76 @@
-import React, { useState } from 'react';
+import styles from "./Comment.module.css";
+import React, { useRef, useState } from "react";
+import { storage } from "../../firebase/config";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { useMutation, useQueryClient } from "react-query";
+import { PostServices } from "../../services/postServices";
+import { useNavigate } from "react-router-dom";
+const Post = () => {
+  const descriptionRef = useRef();
+  const linkRef = useRef();
+  const [image, setImage] = useState();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const postServices = new PostServices();
+  const { mutate } = useMutation(postServices.createPost, {
+    onSuccess: (data) => {
+      queryClient.invalidateQueries("posts");
+      navigate("/");
+    },
+  });
 
-function Comment({ comment }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [editedComment, setEditedComment] = useState(comment);
+  //Function to create a new post
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const fileName = Date.now() + image.name;
+    const storageRef = ref(storage, fileName);
+    await uploadBytes(storageRef, image).then((snapshot) => {
+      console.log(snapshot);
+    });
 
-  const handleEditClick = () => {
-    setIsEditing(true);
-  };
+    const imgUrl = await getDownloadURL(ref(storage, fileName));
 
-  const handleSaveClick = () => {
-    // Call a function to update the comment in the database
-    // and then set isEditing to false
-    setIsEditing(false);
-  };
-
-  const handleCancelClick = () => {
-    setIsEditing(false);
-    setEditedComment(comment);
-  };
-
-  const handleChange = (event) => {
-    setEditedComment(event.target.value);
+    let newPost = {
+      imageUrl: imgUrl,
+      description: descriptionRef.current.value,
+      link: linkRef.current.value,
+      // category: categoryRef.current.value,
+    };
+    mutate(newPost);
   };
 
   return (
-    <div>
-      {!isEditing ? (
-        <>
-          <p>{comment}</p>
-          <button onClick={handleEditClick}>Edit</button>
-        </>
-      ) : (
-        <>
-          <textarea value={editedComment} onChange={handleChange} />
-          <button onClick={handleSaveClick}>Save</button>
-          <button onClick={handleCancelClick}>Cancel</button>
-        </>
-      )}
-    </div>
-  );
-}
+    
+    
+    <form onSubmit={handleSubmit} className={styles.formWrap}>
+      <h1 className={styles.header}>Comment</h1>
 
-export default Comment;
+      <label>
+        Image:
+        <input
+          type="file"
+          onChange={(event) => setImage(event.target.files[0])}
+        />
+      </label>
+      <div>
+        <label>
+          Link:
+          <input type="text" ref={linkRef} />
+        </label>
+      </div>
+      <div>
+        <label>
+          Text:
+          <textarea
+            className={styles.commentWrap}
+            ref={descriptionRef}
+            required
+          />
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default Post;

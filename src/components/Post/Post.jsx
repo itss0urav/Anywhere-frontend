@@ -17,7 +17,7 @@ const Post = ({ imgUrl, title, description}) => {
         </div>
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>
-          <Link to="/Comment">
+          <Link to="/Cmt">
             <i class="fa-solid fa-comment-dots"></i>Comments
           </Link>
           <div className={styles.reports}>

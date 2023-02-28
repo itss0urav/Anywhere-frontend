@@ -11,16 +11,15 @@ const Post = () => {
   const categoryRef = useRef();
   const linkRef = useRef();
   const [image, setImage] = useState();
-  const navigate = useNavigate()
-  const queryClient = useQueryClient()
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const postServices = new PostServices();
   const { mutate } = useMutation(postServices.createPost, {
-    onSuccess: (data) =>{
-      queryClient.invalidateQueries("posts")
-     navigate("/")
+    onSuccess: (data) => {
+      queryClient.invalidateQueries("posts");
+      navigate("/");
     },
   });
-
 
   //Function to create a new post
   const handleSubmit = async (event) => {
@@ -40,7 +39,7 @@ const Post = () => {
       link: linkRef.current.value,
       // category: categoryRef.current.value,
     };
-     mutate(newPost);
+    mutate(newPost);
   };
 
   return (
@@ -63,7 +62,7 @@ const Post = () => {
       <div>
         <label>
           Link:
-          <input type="text"  ref={linkRef} />
+          <input type="text" ref={linkRef} />
         </label>
       </div>
       <div>
@@ -71,7 +70,6 @@ const Post = () => {
           Text:
           <textarea
             className={styles.commentWrap}
-            
             ref={descriptionRef}
             required
           />

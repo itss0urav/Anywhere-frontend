@@ -12,11 +12,13 @@
 }
 
 .categorylisttitle {
+  text-align: center;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
 .categorylistitems {
+  text-align: center;
   list-style-type: none;
   padding: 0;
   margin: 0;

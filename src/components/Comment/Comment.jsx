@@ -12,6 +12,7 @@ const Post = (postData) => {
         </div>
         <p className={styles.title}>IKKA FANS (KARACHI UNITED)</p>
         <div className={styles.imageWrap}>
+          <i class="fa-solid fa-pen-line"></i>
           <img
             src="https://media.discordapp.net/attachments/979241917852303370/1054756965273845820/Picsart_22-12-20_19-16-40-819.jpg?width=1191&height=670"
             alt="computer"
@@ -27,6 +28,7 @@ const Post = (postData) => {
           closely.
         </p>
       </div>
+      
     </div>
   );
 };
