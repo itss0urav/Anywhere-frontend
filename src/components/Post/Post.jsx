@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Post.module.css";
 import Vote from "../Vote/Vote";
 import { Link } from "react-router-dom";
-const Post = ({ imgUrl, title, description}) => {
+const Post = ({ imgUrl, title, description }) => {
   return (
     <div className={styles.postWrap}>
       <Vote />
