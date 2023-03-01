@@ -13,7 +13,7 @@ function AboutUs() {
     {
       id: 2,
       name: "Amal Sam jacob",
-      title: "Documentation Lead",
+      title: "Producer & Documentation Lead",
       photo:
         "https://media.discordapp.net/attachments/1070984839077036052/1079692614942597170/3.png?width=911&height=544",
     },
