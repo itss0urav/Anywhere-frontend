@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   
   user:JSON.parse(localStorage.getItem("anywhere-user"))?.username || null,
   setUser: () => {},
+  userId:JSON.parse(localStorage.getItem("anywhere-user"))?.userId || null
  
 };
 export const UserContext = createContext(INITIAL_STATE);
@@ -14,6 +15,7 @@ export const UserContextProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
+        ...INITIAL_STATE,
         user,
         setUser: setUser,
       }}

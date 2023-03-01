@@ -31,6 +31,8 @@ const Posts = () => {
               imgUrl={post.imageUrl}
               title={post.title}
               description={post.description}
+              userid={post.userId}
+              postId={post._id}
             />
           ))}
         </div>

@@ -18,4 +18,14 @@ export class PostServices {
     if(res) return res.data
 
   }
+
+  async deletePost(id){
+const res = await callApi({
+  method:"delete",
+  relativePath:`/post/${id}`,
+ 
+})
+
+return res?.data
+  }
 }
