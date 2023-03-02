@@ -33,6 +33,8 @@ const Posts = () => {
               description={post.description}
               userid={post.userId}
               postId={post._id}
+              vote={post.vote}
+              link={post.link}
             />
           ))}
         </div>

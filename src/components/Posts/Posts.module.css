@@ -1,26 +1,19 @@
 .wrap {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 20px 50px;
-  /* justify-content: center; */
+  max-width: 100%;
+padding: 30px 6rem;
 
 }
 .innerWrap {
   display: flex;
-  gap: 20px;
-  
-}
-.createPostWrapper {
-  display: flex;
-  flex-direction: row;
-  
-}
-.createPostBtn{
+  justify-content: space-between;
   width: 100%;
-
+  /* padding: 0 2rem; */
+  padding-right: 6.5rem;
+  
 }
+
+
 .sideCompWrapper{
-  padding-left: 2rem;
+margin: 0;
+  
 }
