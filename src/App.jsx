@@ -16,6 +16,7 @@ import Cmt from "./components/Comment/cmt";
 import ReportPost from "./components/Report/ReportPost";
 import Verified from "./components/Verified/Verified";
 import Poll from "./components/Poll/Poll";
+import Requirements from "./components/Pages/Requirements/Requirements";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/cmt" element={<Cmt />} />
               <Route path="/ReportPost" element={<ReportPost />} />
               <Route path="/Poll" element={<Poll />} />
+              <Route path="/Requirements" element={<Requirements />} />
             </Route>
             <Route path="logIn" element={<Login />} />
             <Route path="signUp" element={<SignUp />} />

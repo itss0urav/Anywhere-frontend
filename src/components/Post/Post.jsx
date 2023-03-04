@@ -17,7 +17,7 @@ const Post = ({ imgUrl, title, description, userid, postId, vote, link }) => {
   const { userId } = useContext(UserContext);
   return (
     <div className={styles.postWrap}>
-      <Vote vote={vote}/>
+      <Vote vote={vote} />
 
       <div className={styles.wrap}>
         <div className={styles.userNAme}>
@@ -26,7 +26,9 @@ const Post = ({ imgUrl, title, description, userid, postId, vote, link }) => {
         <p className={styles.title}>{title}</p>
         <div className={styles.imageWrap}>
           <img src={imgUrl} alt="computer" />
-          <a href={link}>{link}</a>
+          <div className={styles.linkGap}>
+            <a href={link}>{link}</a>
+          </div>
         </div>
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>

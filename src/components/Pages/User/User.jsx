@@ -1,16 +1,13 @@
 import React from "react";
 import styles from "./User.module.css";
-import Vote from "../../Vote/Vote";
 import { useContext } from "react";
 import { UserContext } from "./../../../context/UserContext";
 import { Link } from "react-router-dom";
-import AboutUs from "./../AboutUs/AboutUs";
-import FeedbackForm from "./../FeedbackForm/FeedbackForm";
-
 const UserProfile = ({ totalPosts, voteCount, timeOfAccountCreation }) => {
   const { user } = useContext(UserContext);
   return (
     <div className={styles.wrappper}>
+      
       <div className={styles.innerWrappper}>
         <h3 className="user-profile-title">User Profile</h3>
         <p className="user-profile-name">Name: {user}</p>
