@@ -35,6 +35,7 @@ const Posts = () => {
               postId={post._id}
               vote={post.vote}
               link={post.link}
+              username={post.userId.username}
             />
           ))}
         </div>

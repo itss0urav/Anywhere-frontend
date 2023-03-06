@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Requirements.module.css';
 const VerificationPage = () => {
   return (
-    <div>
+    <div className={styles.requirementsWrap}>
       <h1>Verification Requirements</h1>
       <ul>
         <li>At least 15,000 Upvotes in total</li>
@@ -23,6 +24,7 @@ const VerificationPage = () => {
           <input type="email" name="email" required />
         </label>
         <br />
+
         <label>
           Government-Issued ID:
           <input type="file" name="id" accept="image/*,.pdf" required />

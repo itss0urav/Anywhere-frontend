@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { QueryClient, useMutation } from "react-query";
 import { PostServices } from "../../services/postServices";
-const Post = ({ imgUrl, title, description, userid, postId, vote, link }) => {
+const Post = ({ imgUrl, title, description, userid, postId, vote, link, username }) => {
   const queryClient = new QueryClient();
   const postServices = new PostServices();
   const { mutate } = useMutation(postServices.deletePost, {
@@ -21,7 +21,7 @@ const Post = ({ imgUrl, title, description, userid, postId, vote, link }) => {
 
       <div className={styles.wrap}>
         <div className={styles.userNAme}>
-          <p>Posted by Author</p>
+          <p>Posted by {username}</p>
         </div>
         <p className={styles.title}>{title}</p>
         <div className={styles.imageWrap}>
