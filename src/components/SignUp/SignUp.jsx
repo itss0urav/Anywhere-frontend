@@ -12,7 +12,7 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
-  const { mutate } = useMutation(Authenticate.createUser, {
+  const { mutate, isLoading } = useMutation(Authenticate.createUser, {
     onSuccess: (data) => {
       data && navigate("/login");
     },
@@ -31,36 +31,47 @@ const SignUp = () => {
   }
 
   return (
-    <div className={styles.wrappper}>
-      <form className={styles.formWrap} onSubmit={registerUser}>
-        <span className={styles.loginCaption}>SignUp</span>
-        <input
-          type="text"
-          placeholder="Enter your username"
-          required
-          ref={userNameRef}
-        />
-        <input
-          type="email"
-          placeholder="Enter your email"
-          required
-          ref={emailRef}
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          required
-          ref={passwordRef}
-        />
-        <button>SignUp</button>
-        <span className={styles.signup}>
-          Already have an account ?{" "}
-          <Link to="/login" className="link">
-            LogIn
-          </Link>
-        </span>
-      </form>
-    </div>
+    <>
+    
+       {
+        isLoading ? (
+         <div style={{height:"100vh", display:"grid", placeContent:"center"}}>
+           <CircleLoader color="#36d7b7" size={106}/>
+         </div>) : (
+ <div className={styles.wrappper}>
+ <form className={styles.formWrap} onSubmit={registerUser}>
+   <span className={styles.loginCaption}>SignUp</span>
+   <input
+     type="text"
+     placeholder="Enter your username"
+     required
+     ref={userNameRef}
+   />
+   <input
+     type="email"
+     placeholder="Enter your email"
+     required
+     ref={emailRef}
+   />
+   <input
+     type="password"
+     placeholder="Enter your password"
+     required
+     ref={passwordRef}
+   />
+   <button>SignUp</button>
+   <span className={styles.signup}>
+     Already have an account ?{" "}
+     <Link to="/login" className="link">
+       LogIn
+     </Link>
+   </span>
+ </form>
+</div>
+         )
+    }
+    </>
+   
   );
 };
 
