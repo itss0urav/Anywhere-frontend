@@ -4,6 +4,7 @@ import styles from "./signUp.module.css";
 import { AuthService } from "../../services";
 import { useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
+import { CircleLoader } from "react-spinners";
 const SignUp = () => {
   const Authenticate = new AuthService();
   const userNameRef = useRef();

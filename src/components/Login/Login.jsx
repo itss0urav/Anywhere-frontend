@@ -6,6 +6,7 @@ import { AuthService } from "../../services/";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
+import { CircleLoader } from "react-spinners";
 const Login = () => {
   const authenticate = new AuthService();
   const navigate = useNavigate();
