@@ -5,6 +5,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useMutation, useQueryClient } from "react-query";
 import { PostServices } from "../../services/postServices";
 import { useNavigate } from "react-router-dom";
+import { CircleLoader} from "react-spinners"
 const Post = () => {
   const titleRef = useRef();
   const descriptionRef = useRef();
@@ -14,7 +15,7 @@ const Post = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const postServices = new PostServices();
-  const { mutate } = useMutation(postServices.createPost, {
+  const { mutate, isLoading, isError } = useMutation(postServices.createPost, {
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
       navigate("/");
@@ -43,46 +44,57 @@ const Post = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.formWrap}>
-      <h1 className={styles.header}>Create a Post</h1>
-
-      <div>
+    <>
+    {
+      isLoading ? (
+        <div style={{height:"100vh", display:"grid", placeContent:"center"}}>
+          <CircleLoader color="#36d7b7" size={106}/>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className={styles.formWrap}>
+        <h1 className={styles.header}>Create a Post</h1>
+  
+        <div>
+          <label>
+            Title:
+            <input type="text" ref={titleRef} required />
+          </label>
+        </div>
         <label>
-          Title:
-          <input type="text" ref={titleRef} required />
-        </label>
-      </div>
-      <label>
-        Image:
-        <input
-          type="file"
-          onChange={(event) => setImage(event.target.files[0])}
-        />
-      </label>
-      <div>
-        <label>
-          Link:
-          <input type="text" ref={linkRef} />
-        </label>
-      </div>
-      <div>
-        <label>
-          Text:
-          <textarea
-            className={styles.commentWrap}
-            ref={descriptionRef}
-            required
+          Image:
+          <input
+            type="file"
+            onChange={(event) => setImage(event.target.files[0])}
           />
         </label>
-      </div>
-      <div>
-        <label>
-          Category:
-          <input type="text" ref={categoryRef} required />
-        </label>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+        <div>
+          <label>
+            Link:
+            <input type="text" ref={linkRef} />
+          </label>
+        </div>
+        <div>
+          <label>
+            Text:
+            <textarea
+              className={styles.commentWrap}
+              ref={descriptionRef}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Category:
+            <input type="text" ref={categoryRef} required />
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      )
+    }
+    </>
+  
   );
 };
 
