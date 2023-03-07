@@ -17,11 +17,11 @@ import ReportPost from "./components/Report/ReportPost";
 import Verified from "./components/Verified/Verified";
 import Poll from "./components/Poll/Poll";
 import Requirements from "./components/Pages/Requirements/Requirements";
-const queryClient = new QueryClient();
+
 function App() {
   return (
     <div className="">
-      <QueryClientProvider client={queryClient}>
+     
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navbar />}>
@@ -45,7 +45,7 @@ function App() {
             <Route path="createPost" element={<CreatePost />} />
           </Routes>
         </BrowserRouter>
-      </QueryClientProvider>
+      
     </div>
   );
 }

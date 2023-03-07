@@ -9,18 +9,17 @@ import Categories from "../Categories/Categories";
 import { PostServices } from "../../services/postServices";
 import { Outlet, Link } from "react-router-dom";
 const Posts = () => {
-  const { user } = useContext(UserContext);
-  const [posts, setPosts] = useState([]);
-  const postServices = new PostServices();
-  const navigate = useNavigate();
-  useQuery({
-    queryFn: postServices.getPosts,
-    queryKey: ["posts"],
-    onSuccess: (data) => {
-      console.log(data);
-      setPosts(data);
-    },
-  });
+  const { user, posts } = useContext(UserContext);
+  // const [posts, setPosts] = useState([]);
+  // const postServices = new PostServices();
+  // const navigate = useNavigate();
+  // useQuery({
+  //   queryFn: postServices.getPosts,
+  //   queryKey: ["posts"],
+  //   onSuccess: (data) => {
+  //     setPosts(data);
+  //   },
+  // });
 
   return (
     <div className={styles.wrap}>
