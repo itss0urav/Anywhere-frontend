@@ -13,7 +13,12 @@ form {
       );
     border-radius: 5px;
   }
-  
+  .reqWrap{
+    margin-top: 14rem;
+    margin-bottom: 19rem;
+    color: white;
+  }
+
   label {
     margin: 1rem 0 0.5rem;
     font-weight: bold;

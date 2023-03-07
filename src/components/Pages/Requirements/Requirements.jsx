@@ -43,7 +43,7 @@ const VerificationPage = () => {
         <li>Engage with your followers</li>
         <li>Post high-quality content</li>
       </ul>
-      <p>Ready to apply for verification? Click <a href="/verification">here</a> to get started.</p>
+      <p>Ready to apply for verification? Click <a href="/Verified">here</a> to get started.</p>
     </div>
   );
 };
