@@ -27,7 +27,7 @@ function AboutUs() {
       id: 3,
       name: "Sharon Shine",
       title: "Feasibility Study and Hardware and Software Management",
-      photo: "https://pps.whatsapp.net/v/t61.24694-24/328166462_108475168843236_6552277634280518597_n.jpg?ccb=11-4&oh=01_AdSQSrLUVGKCX8KQWizu8rE-cgg24pbbdyQRGZTZkVezKQ&oe=64096D1F",
+      photo: "https://cdn.discordapp.com/attachments/979241917852303370/1083277442195652719/IMG_0132.png",
     },
   ];
   return (
