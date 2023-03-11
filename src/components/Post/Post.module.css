@@ -62,6 +62,9 @@
   font-weight: bolder;
 }
 .title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 25px;
   font-weight: bolder;
 }
 .feedBacks {

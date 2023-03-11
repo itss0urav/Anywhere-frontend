@@ -12,21 +12,21 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  color: rgb(59, 250, 247);
+  color: rgb(181, 248, 246);
 }
 .team :before {
   content: "";
   background: linear-gradient(
     45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
+    #002fff,
+    #0055de,
+    #0091ff,
+    #1fa2ff,
+    #1bc6ff,
     #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
+    #1e87f1,
+    #233e89,
+    #001e82
   );
   position: absolute;
   top: -2px;
