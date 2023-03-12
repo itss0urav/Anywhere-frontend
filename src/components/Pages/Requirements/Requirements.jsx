@@ -18,7 +18,7 @@ const VerificationPage = () => {
         <li>👉Post high-quality content</li>
       </ul>
       <p>
-        Any doubts? Contact Us <a href="/Verified">here</a> to
+        Any doubts? Contact Us <a href="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">here</a> to
         get started.
       </p>
       <p>Please fill out the form below and submit the required documents:</p>
