@@ -5,13 +5,22 @@ const VerificationPage = () => {
     <div className={styles.requirementsWrap}>
       <h1>Verification Requirements</h1>
       <ul>
-        <li>*At least 15,000 Upvotes in total</li>
-        <li>*Public figure or celebrity status</li>
-        <li>*Email address</li>
-        <li>*Government-issued ID</li>
-        <li>*Proof of address</li>
+        <li>👉At least 15,000 Upvotes in total</li>
+        <li>👉Public figure or celebrity status</li>
+        <li>👉Email address</li>
+        <li>👉Government-issued ID</li>
+        <li>👉Proof of address</li>
       </ul>
-      <h2>How to Apply for Verification</h2>
+      <h2>Preparing for Verification</h2>
+      <ul>
+        <li>👉Be active on the platform</li>
+        <li>👉Engage with your followers</li>
+        <li>👉Post high-quality content</li>
+      </ul>
+      <p>
+        Any doubts? Contact Us <a href="/Verified">here</a> to
+        get started.
+      </p>
       <p>Please fill out the form below and submit the required documents:</p>
       <form>
 
@@ -53,16 +62,7 @@ const VerificationPage = () => {
 
         <button type="submit">Submit</button>
       </form>
-      <h2>Preparing for Verification</h2>
-      <ul>
-        <li>Be active on the platform</li>
-        <li>Engage with your followers</li>
-        <li>Post high-quality content</li>
-      </ul>
-      <p>
-        Ready to apply for verification? Click <a href="/Verified">here</a> to
-        get started.
-      </p>
+      
     </div>
   );
 };
