@@ -35,9 +35,11 @@ const Post = ({
         <p className={styles.title}>{title}</p>
         <div className={styles.imageWrap}>
           <img src={imgUrl} alt="computer" />
-          <div className={styles.linkGap}>
-            <a href={link}>{link}</a>
-          </div>
+        </div>
+        <div className={styles.linkGap}>
+          <a href={link} style={{ zIndex: 20 }}>
+            {link}
+          </a>
         </div>
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>

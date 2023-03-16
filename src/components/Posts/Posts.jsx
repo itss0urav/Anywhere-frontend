@@ -32,7 +32,7 @@ const Posts = () => {
               description={post.description}
               userid={post.userId}
               postId={post._id}
-              vote={post.vote}
+              vote={post?.vote}
               link={post.link}
               username={post.userId.username}
             />

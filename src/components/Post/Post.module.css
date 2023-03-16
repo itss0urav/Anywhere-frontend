@@ -19,7 +19,12 @@
   object-fit: cover;
 }
 .linkGap{
-  margin-top:1rem
+  padding-top:1rem;
+  text-align: left;
+  /* background-color: red; */
+  z-index: 10;
+  position: relative;
+  right: 15rem;
 }
 .userNAme {
   width: 100%;
@@ -84,7 +89,7 @@
 }
 
 .desc {
-  padding-top: 2rem;
+  padding-top: 0.5rem;
   padding-left: 36px;
   padding-right: 36px;
 }
