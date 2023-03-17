@@ -78,7 +78,9 @@ const FeedbackForm = () => {
             />
           </label>
         </div>
-        <button type="submit">Submit Feedback</button>
+        <button className={styles.buttonHeight} type="submit">
+          Submit Feedback
+        </button>
       </form>
     </div>
   );
