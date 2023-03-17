@@ -21,31 +21,29 @@ import Requirements from "./components/Pages/Requirements/Requirements";
 function App() {
   return (
     <div className="">
-     
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navbar />}>
-              <Route path="/" element={<Posts />} />
-              {/* <Route path="/" element={} /> */}
-              <Route path="/comment" element={<Comment />} />
-              <Route path="/Verified" element={<Verified />} />
-              <Route path="/AboutUs" element={<AboutUs />} />
-              <Route path="/cmt" element={<Cmt />} />
-              <Route path="/ReportPost" element={<ReportPost />} />
-              <Route path="/Poll" element={<Poll />} />
-              <Route path="/Requirements" element={<Requirements />} />
-            </Route>
-            <Route path="logIn" element={<Login />} />
-            <Route path="signUp" element={<SignUp />} />
-            <Route path="FeedbackForm" element={<FeedbackForm />} />
-            {/* <Route path="Sidebar" element={<Sidebar />} /> */}
-            <Route path="User" element={<User />} />
-            <Route path="Admin" element={<Admin />} />
-            <Route path="Vote" element={<Vote />} />
-            <Route path="createPost" element={<CreatePost />} />
-          </Routes>
-        </BrowserRouter>
-      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />}>
+            <Route path="/" element={<Posts />} />
+            {/* <Route path="/" element={} /> */}
+            <Route path="/comment" element={<Comment />} />
+            <Route path="/Verified" element={<Verified />} />
+            <Route path="/AboutUs" element={<AboutUs />} />
+            <Route path="/cmt" element={<Cmt />} />
+            <Route path="/ReportPost" element={<ReportPost />} />
+            <Route path="/Poll" element={<Poll />} />
+            <Route path="/Requirements" element={<Requirements />} />
+          </Route>
+          <Route path="logIn" element={<Login />} />
+          <Route path="signUp" element={<SignUp />} />
+          <Route path="FeedbackForm" element={<FeedbackForm />} />
+          {/* <Route path="Sidebar" element={<Sidebar />} /> */}
+          <Route path="User" element={<User />} />
+          <Route path="Admin" element={<Admin />} />
+          <Route path="Vote" element={<Vote />} />
+          <Route path="createPost" element={<CreatePost />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
