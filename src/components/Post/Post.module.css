@@ -21,6 +21,7 @@
 .linkGap{
   padding-top:1rem;
   text-align: left;
+  margin-left: 3rem;
   /* background-color: red; */
   z-index: 10;
   position: relative;

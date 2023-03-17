@@ -41,19 +41,25 @@ const Posts = () => {
         <div className={styles.sideCompWrapper}>
           {!user ? (
             <>
-              <Link to="/Login">
-                <button className={styles.createPostBtn}>
-                  Login to CreatePost
-                </button>
-              </Link>
+              <div className={styles.createPostWrap}>
+                <Link to="/Login">
+                  <button className={styles.createPostBtn}>
+                    Login to CreatePost
+                  </button>
+                </Link>
+              </div>
             </>
           ) : (
-            <Link to="/CreatePost">
-              <button className={styles.createPostBtn}>CreatePost</button>
-            </Link>
+            <div className={styles.createPostWrap}>
+              <Link to="/CreatePost">
+                <button className={styles.createPostBtn}>CreatePost</button>
+              </Link>
+            </div>
           )}
           <Sidebar />
-          <Categories />
+          <div className={styles.categWrap}>
+            <Categories />
+          </div>
         </div>
       </div>
     </div>
