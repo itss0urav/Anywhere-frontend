@@ -10,17 +10,7 @@ import { PostServices } from "../../services/postServices";
 import { Outlet, Link } from "react-router-dom";
 const Posts = () => {
   const { user, posts } = useContext(UserContext);
-  // const [posts, setPosts] = useState([]);
-  // const postServices = new PostServices();
-  // const navigate = useNavigate();
-  // useQuery({
-  //   queryFn: postServices.getPosts,
-  //   queryKey: ["posts"],
-  //   onSuccess: (data) => {
-  //     setPosts(data);
-  //   },
-  // });
-
+  
   return (
     <div className={styles.wrap}>
       <div className={styles.innerWrap}>

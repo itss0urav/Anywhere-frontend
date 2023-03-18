@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { QueryClient, useMutation } from "react-query";
 import { PostServices } from "../../services/postServices";
+import { useVoteService } from "../../customHooks/Services";
 const Post = ({
   imgUrl,
   title,
@@ -24,9 +25,10 @@ const Post = ({
   });
 
   const { userId } = useContext(UserContext);
+
   return (
     <div className={styles.postWrap}>
-      <Vote vote={vote} />
+      <Vote vote={vote} postId={postId} />
 
       <div className={styles.wrap}>
         <div className={styles.userNAme}>
