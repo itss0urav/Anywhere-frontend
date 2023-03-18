@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./User.module.css";
 import { useContext } from "react";
 import { UserContext } from "./../../../context/UserContext";
 import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
-const UserProfile = ({ totalPosts, voteCount, timeOfAccountCreation }) => {
+import { useQuery } from "react-query";
+import { useVoteService } from "../../../customHooks/Services";
+const UserProfile = ({ totalPosts, timeOfAccountCreation }) => {
   const { user } = useContext(UserContext);
+  const [voteCount, setVoteCount] = useState(0)
+  const voteServices = useVoteService();
+  useQuery({
+    queryKey:["voteCount"],
+    queryFn:voteServices.getVoteCount,
+    onSuccess:(data) => {
+      console.log("logging voteCount", data)
+      setVoteCount(data?.voteCount)}
+  })
   return (
     <div>
       <Navbar />
