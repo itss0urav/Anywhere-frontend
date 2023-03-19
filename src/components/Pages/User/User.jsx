@@ -25,7 +25,7 @@ const UserProfile = ({ totalPosts, timeOfAccountCreation }) => {
           <h3 className="user-profile-title">User Profile</h3>
           <p className="user-profile-name">Name: {user}</p>
           <p className="user-profile-posts">Total Posts: {totalPosts}</p>
-          <p className="user-profile-votes">Votes: {voteCount}</p>
+          <p className="user-profile-votes">Total Votes: {voteCount}</p>
           <p className="user-profile-creation-time">
             Time of Account Creation: {timeOfAccountCreation}
           </p>
