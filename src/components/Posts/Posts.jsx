@@ -10,7 +10,7 @@ import { PostServices } from "../../services/postServices";
 import { Outlet, Link } from "react-router-dom";
 const Posts = () => {
   const { user, posts } = useContext(UserContext);
-  
+
   return (
     <div className={styles.wrap}>
       <div className={styles.innerWrap}>
@@ -33,9 +33,7 @@ const Posts = () => {
             <>
               <div className={styles.createPostWrap}>
                 <Link to="/Login">
-                  <button className={styles.createPostBtn}>
-                    Login to CreatePost
-                  </button>
+                  <button className={styles.createPostBtn}>CreatePost</button>
                 </Link>
               </div>
             </>
