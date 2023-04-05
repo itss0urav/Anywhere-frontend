@@ -3,9 +3,13 @@ import { useMutation } from "react-query";
 import { useVoteService } from "../../customHooks/Services";
 import styles from "./Vote.module.css";
 import { useQueryClient } from "react-query";
+
 const Vote = ({ vote, postId }) => {
   const voteServices = useVoteService();
   const queryClient = useQueryClient();
+
+  const [voteColor, setVoteColor] = useState("");
+
   const {
     isLoading,
     isError,
@@ -17,30 +21,49 @@ const Vote = ({ vote, postId }) => {
       queryClient.invalidateQueries("posts");
     },
   });
+
   const { mutate: downVote } = useMutation({
-    miutationKey: ["downVote"],
+    mutationKey: ["downVote"],
     mutationFn: voteServices.downVote,
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
     },
   });
+
   async function upVotePost() {
+    if (voteColor === "green") {
+      setVoteColor("");
+    } else {
+      setVoteColor("green");
+    }
     upVote({ postId, up: true });
   }
+
   async function downVotePost() {
+    if (voteColor === "red") {
+      setVoteColor("");
+    } else {
+      setVoteColor("red");
+    }
     downVote({ postId, up: false });
   }
+
   return (
     <div className={styles.voteContainer}>
       <i
-        className="fa-solid fa-arrow-up"
-        style={{ cursor: "pointer" }}
-        onClick={upVotePost}></i>
+        className="fa-solid fa-arrow-up "
+        style={{
+          cursor: "pointer",
+          color: voteColor === "green" ? "green" : "",
+        }}
+        onClick={upVotePost}
+      ></i>
       <span className={styles.voteCount}>{vote.vote}</span>
       <i
         className="fa-solid fa-arrow-down"
+        style={{ cursor: "pointer", color: voteColor === "red" ? "red" : "" }}
         onClick={downVotePost}
-        style={{ cursor: "pointer" }}></i>
+      ></i>
     </div>
   );
 };
