@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import styles from "./Comment.module.css";
 import Vote from "../Vote/Vote";
-const Post = (postData) => {
+import { useParams } from "react-router-dom";
+import { useQuery } from "react-query";
+import { usePostServices } from "../../customHooks/Services";
+const Post = () => {
+  const {postId} = useParams()
+  const [post, setPost] = useState()
+  const postServices = usePostServices()
+  useQuery({
+    queryKey:["postById", postId],
+    queryFn:postServices.getPostById,
+    onSuccess:(data) => setPost(data[0])
+  })
   return (
     <div className={styles.postWrap}>
-      <Vote />
+      {/* <Vote /> */}
 
       <div className={styles.wrap}>
         <div className={styles.userNAme}>

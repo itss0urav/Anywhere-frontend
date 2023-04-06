@@ -5,27 +5,34 @@ export class PostServices {
     const res = await callApi({
       method: "post",
       relativePath: "/post",
-      apiData:data,
+      apiData: data,
     });
-    if(res) return res.data
+    if (res) return res.data;
   }
 
-  async getPosts(){
+  async getPosts() {
     const res = await callApi({
-      method:"get",
-      relativePath:"/post"
-    })
-    if(res) return res.data
-
+      method: "get",
+      relativePath: "/post",
+    });
+    if (res) return res.data;
   }
 
-  async deletePost(id){
-const res = await callApi({
-  method:"delete",
-  relativePath:`/post/${id}`,
- 
-})
+  async deletePost(id) {
+    const res = await callApi({
+      method: "delete",
+      relativePath: `/post/${id}`,
+    });
 
-return res?.data
+    return res?.data;
+  }
+
+  async getPostById({queryKey}) {
+
+    const response = await callApi({
+      method:"get",
+      relativePath:`/post?_id=${queryKey[1]}`
+    })
+    return response?.data
   }
 }

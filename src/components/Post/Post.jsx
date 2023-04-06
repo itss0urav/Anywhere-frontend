@@ -45,7 +45,7 @@ const Post = ({
         </div>
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>
-          <Link to="/Cmt">
+          <Link to={`/comment/${postId}`}>
             <i class="fa-solid fa-comment-dots"></i>Comments
           </Link>
           <div className={styles.reports}>

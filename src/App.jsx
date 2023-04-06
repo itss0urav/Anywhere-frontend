@@ -16,7 +16,7 @@ import Cmt from "./components/Comment/cmt";
 import ReportPost from "./components/Report/ReportPost";
 import Verified from "./components/Verified/Verified";
 import Poll from "./components/Poll/Poll";
-import Requirements from "./components/Pages/Requirements/Requirements";
+import VerificationPage from "./components/Pages/requirements/requirements";
 
 function App() {
   return (
@@ -25,13 +25,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route path="/" element={<Posts />} />
-            <Route path="/comment" element={<Comment />} />
+            <Route path="/comment/:postId" element={<Comment />} />
             <Route path="/Verified" element={<Verified />} />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/cmt" element={<Cmt />} />
             <Route path="/ReportPost" element={<ReportPost />} />
             <Route path="/Poll" element={<Poll />} />
-            <Route path="/Requirements" element={<Requirements />} />
+            <Route path="/Requirements" element={<VerificationPage />} />
           </Route>
           <Route path="logIn" element={<Login />} />
           <Route path="signUp" element={<SignUp />} />
