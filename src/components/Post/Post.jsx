@@ -15,6 +15,7 @@ const Post = ({
   vote,
   link,
   username,
+  context
 }) => {
   const queryClient = new QueryClient();
   const postServices = new PostServices();
@@ -45,16 +46,19 @@ const Post = ({
         </div>
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>
-          <Link to={`/comment/${postId}`}>
+          {
+            context !== "comment" && <Link to={`/comment/${postId}`}>
             <i class="fa-solid fa-comment-dots"></i>Comments
           </Link>
+          }
+        
           <div className={styles.reports}>
             <Link to="/ReportPost">
               <i class="fa-solid fa-triangle-exclamation"></i>Report
             </Link>
           </div>
           <div className={styles.deleteButtonWrap}>
-            {userid._id == userId && (
+            {userid?._id == userId && (
               <p style={{ cursor: "pointer" }} onClick={() => mutate(postId)}>
                 <i class="fa-solid fa-trash-can"></i>Delete
               </p>

@@ -58,7 +58,7 @@ const Vote = ({ vote, postId }) => {
         }}
         onClick={upVotePost}
       ></i>
-      <span className={styles.voteCount}>{vote.vote}</span>
+      <span className={styles.voteCount}>{vote?.vote}</span>
       <i
         className="fa-solid fa-arrow-down"
         style={{ cursor: "pointer", color: voteColor === "red" ? "red" : "" }}

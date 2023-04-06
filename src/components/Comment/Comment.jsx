@@ -4,44 +4,37 @@ import Vote from "../Vote/Vote";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { usePostServices } from "../../customHooks/Services";
-const Post = () => {
-  const {postId} = useParams()
-  const [post, setPost] = useState()
-  const postServices = usePostServices()
+import Post from "../Post/Post";
+const Comment = () => {
+  const { postId } = useParams();
+  const [post, setPost] = useState();
+  const postServices = usePostServices();
   useQuery({
-    queryKey:["postById", postId],
-    queryFn:postServices.getPostById,
-    onSuccess:(data) => setPost(data[0])
-  })
+    queryKey: ["postById", postId],
+    queryFn: postServices.getPostById,
+    onSuccess: (data) => {
+      console.log(data);
+      setPost(data[0]);
+    },
+  });
   return (
-    <div className={styles.postWrap}>
-      {/* <Vote /> */}
-
-      <div className={styles.wrap}>
-        <div className={styles.userNAme}>
-          <p>Posted by Author</p>
-        </div>
-        <p className={styles.title}>IKKA FANS (KARACHI UNITED)</p>
-        <div className={styles.imageWrap}>
-          <i class="fa-solid fa-pen-line"></i>
-          <img
-            src="https://media.discordapp.net/attachments/979241917852303370/1054756965273845820/Picsart_22-12-20_19-16-40-819.jpg?width=1191&height=670"
-            alt="computer"
-          />
-        </div>
-        <p className={styles.desc}>
-          "Ikka fans" refers to fans of Indian film actor Mammootty. He is a
-          prominent film actor in the Indian film industry, particularly in the
-          Malayalam film industry. He has acted in over 400 films and is
-          considered one of the greatest actors in Indian cinema. His fans
-          admire his acting skills, versatility, and charismatic screen
-          presence. They are passionate about his movies and follow his work
-          closely.
-        </p>
-      </div>
-      
-    </div>
+   <div style={{width:"50%"}}>
+   <Post 
+   description={post?.description}
+    imgUrl={post?.imageUrl}
+    link={post?.link}
+    title={post?.title}
+    username={post?.userId?.username}
+    vote={post?.vote}
+    postId={post?._id}
+    userid={post?.userId?._id}
+    context="comment"
+   />
+   <div style={{background:"white", marginLeft:"40px"}}>
+      <h3 style={{fontFamily:"Lato"}}>Comments</h3>
+   </div>
+   </div>
   );
 };
 
-export default Post;
+export default Comment;
