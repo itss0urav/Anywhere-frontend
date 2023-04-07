@@ -35,4 +35,21 @@ export class PostServices {
     })
     return response?.data
   }
+
+  async createComment(args){
+    const response = await callApi({
+      method:"post",
+      relativePath:"/comment",
+      apiData:args
+    })
+    return response?.data
+  }
+  async getComments({queryKey}){
+    const response = await callApi({
+      method:"get",
+      relativePath:`/comment?postId=${queryKey[1]}`,
+    })
+    return response?.data
+  }
+
 }
