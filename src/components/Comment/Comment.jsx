@@ -44,7 +44,7 @@ const Comment = () => {
     await createNewComment(commentInfo);
   }
   return (
-    <div style={{ width: "50%" }}>
+    <div style={{ width: "50%",paddingLeft:"20%" }}>
       <Post
         description={post?.description}
         imgUrl={post?.imageUrl}
@@ -57,7 +57,7 @@ const Comment = () => {
         context="comment"
       />
       <div
-        style={{ background: "white", marginLeft: "100px",paddingLeft:"1rem", paddingRight:"1rem" }}>
+        style={{ background: "white",paddingTop:"1rem",paddingLeft:"2.5rem", paddingRight:"2.5rem" }}>
         <h3 style={{ fontFamily: "Lato"}}>Comments</h3>
         {/* <div style={{height:"1px", width:"90%", backgroundColor:"black"}}></div> */}
         <div
