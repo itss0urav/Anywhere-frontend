@@ -25,4 +25,5 @@ export class VoteService {
     });
     return result?.data
   }
+
 }

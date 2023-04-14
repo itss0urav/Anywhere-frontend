@@ -6,17 +6,30 @@ import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { useQuery } from "react-query";
 import { useVoteService } from "../../../customHooks/Services";
-const UserProfile = ({ totalPosts, timeOfAccountCreation }) => {
+import { useUserServices } from "../../../services/userServices";
+const UserProfile = ({timeOfAccountCreation }) => {
   const { user } = useContext(UserContext);
+  const [totalPosts, setTotalPosts] = useState();
   const [voteCount, setVoteCount] = useState(0)
+  const [userCreationTime, setUserCreationTime] = useState()
   const voteServices = useVoteService();
+  const userServices = useUserServices()
+  // useQuery({
+  //   queryKey:["voteCount"],
+  //   queryFn:voteServices.getVoteCount,
+  //   onSuccess:(data) => {
+  //     console.log("logging voteCount", data)
+  //     setVoteCount(data?.voteCount)}
+  // })
   useQuery({
-    queryKey:["voteCount"],
-    queryFn:voteServices.getVoteCount,
+    queryKey:["userData"],
+    queryFn:userServices.getUserInfo,
     onSuccess:(data) => {
-      console.log("logging voteCount", data)
-      setVoteCount(data?.voteCount)}
-  })
+      console.log("logging User data", data)
+      setVoteCount(data?.voteCount)
+      setTotalPosts(data?.postCount)
+      setUserCreationTime(data?.userCreationTime)
+  }})
   return (
     <div>
       <Navbar />
@@ -27,7 +40,7 @@ const UserProfile = ({ totalPosts, timeOfAccountCreation }) => {
           <p className="user-profile-posts">Total Posts: {totalPosts}</p>
           <p className="user-profile-votes">Total Votes: {voteCount}</p>
           <p className="user-profile-creation-time">
-            Time of Account Creation: {timeOfAccountCreation}
+            Time of Account Creation: {new Date(userCreationTime).toDateString()}
           </p>
         </div>
         <Link to="/Verified">
