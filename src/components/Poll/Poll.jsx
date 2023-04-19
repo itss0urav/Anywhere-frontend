@@ -65,12 +65,15 @@ const Poll = () => {
           </div>
         ))}
       </Form.Group>
+      <div className='buttonInStyle'>
       <Button variant="secondary" onClick={handleAddOption}>
         Add Option
       </Button>
       <Button variant="primary" type="submit" className="ms-3">
         Submit
       </Button>
+      </div>
+      
     </Form>
   );
 };

@@ -57,7 +57,11 @@ const Comment = () => {
         context="comment"
       />
       <div
+<<<<<<< HEAD
         style={{ background: "white",paddingTop:"1rem",paddingLeft:"2.5rem", paddingRight:"2.5rem" }}>
+=======
+        style={{ background: "white", marginLeft: "2.5rem",paddingLeft:"1rem", paddingRight:"1rem" }}>
+>>>>>>> a82fc596e3fc048903c5f40fb115f58df0ca8e9d
         <h3 style={{ fontFamily: "Lato"}}>Comments</h3>
         {/* <div style={{height:"1px", width:"90%", backgroundColor:"black"}}></div> */}
         <div
@@ -74,12 +78,22 @@ const Comment = () => {
                   display: "flex",
                   flexDirection: "column",
                   border: "1px solid grey",
-                  minHeight:"3rem",
+                  minHeight:"5rem",
                   borderRadius: "5px",
-                  padding: "1rem",
+                  padding: "0.5rem",
+                  justifyContent:"space-between"
                 }}>
                 <p>{comment.content}</p>
+                <div style={{
+                  display:"flex",
+                  justifyContent:"space-between",
+                }}>
+                  <div>
+                    <p> upVote</p>
+                    <p>downVote</p>
+                  </div>
                 <h6 style={{ alignSelf: "end" }}>Commented by {comment.userId.username}</h6>
+                </div>
               </div>
             );
           })}
