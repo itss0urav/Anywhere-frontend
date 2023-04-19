@@ -57,11 +57,7 @@ const Comment = () => {
         context="comment"
       />
       <div
-<<<<<<< HEAD
-        style={{ background: "white",paddingTop:"1rem",paddingLeft:"2.5rem", paddingRight:"2.5rem" }}>
-=======
         style={{ background: "white", marginLeft: "2.5rem",paddingLeft:"1rem", paddingRight:"1rem" }}>
->>>>>>> a82fc596e3fc048903c5f40fb115f58df0ca8e9d
         <h3 style={{ fontFamily: "Lato"}}>Comments</h3>
         {/* <div style={{height:"1px", width:"90%", backgroundColor:"black"}}></div> */}
         <div
