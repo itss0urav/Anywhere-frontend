@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { usePostServices } from "../../customHooks/Services";
+import {BiUpvote, BiDownvote} from "react-icons/bi"
 import Post from "../Post/Post";
 
 const Comment = () => {
@@ -84,9 +85,10 @@ const Comment = () => {
                   display:"flex",
                   justifyContent:"space-between",
                 }}>
-                  <div>
-                    <p> upVote</p>
-                    <p>downVote</p>
+                  <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+                    <BiUpvote />
+                    {0}
+                    <BiDownvote />
                   </div>
                 <h6 style={{ alignSelf: "end" }}>Commented by {comment.userId.username}</h6>
                 </div>

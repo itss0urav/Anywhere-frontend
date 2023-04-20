@@ -36,7 +36,7 @@ const Vote = ({ vote, postId }) => {
     } else {
       setVoteColor("green");
     }
-    upVote({ postId, up: true });
+    upVote({ resourceId:postId, up: true });
   }
 
   async function downVotePost() {
@@ -45,7 +45,7 @@ const Vote = ({ vote, postId }) => {
     } else {
       setVoteColor("red");
     }
-    downVote({ postId, up: false });
+    downVote({ resourceId:postId, up: false });
   }
 
   return (
