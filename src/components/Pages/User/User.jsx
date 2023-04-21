@@ -7,13 +7,13 @@ import Navbar from "../../Navbar/Navbar";
 import { useQuery } from "react-query";
 import { useVoteService } from "../../../customHooks/Services";
 import { useUserServices } from "../../../services/userServices";
-const UserProfile = ({timeOfAccountCreation }) => {
+const UserProfile = ({ timeOfAccountCreation }) => {
   const { user } = useContext(UserContext);
   const [totalPosts, setTotalPosts] = useState();
-  const [voteCount, setVoteCount] = useState(0)
-  const [userCreationTime, setUserCreationTime] = useState()
+  const [voteCount, setVoteCount] = useState(0);
+  const [userCreationTime, setUserCreationTime] = useState();
   const voteServices = useVoteService();
-  const userServices = useUserServices()
+  const userServices = useUserServices();
   // useQuery({
   //   queryKey:["voteCount"],
   //   queryFn:voteServices.getVoteCount,
@@ -22,14 +22,15 @@ const UserProfile = ({timeOfAccountCreation }) => {
   //     setVoteCount(data?.voteCount)}
   // })
   useQuery({
-    queryKey:["userData"],
-    queryFn:userServices.getUserInfo,
-    onSuccess:(data) => {
-      console.log("logging User data", data)
-      setVoteCount(data?.voteCount)
-      setTotalPosts(data?.postCount)
-      setUserCreationTime(data?.userCreationTime)
-  }})
+    queryKey: ["userData"],
+    queryFn: userServices.getUserInfo,
+    onSuccess: (data) => {
+      console.log("logging User data", data);
+      setVoteCount(data?.voteCount);
+      setTotalPosts(data?.postCount);
+      setUserCreationTime(data?.userCreationTime);
+    },
+  });
   return (
     <div>
       <Navbar />
@@ -40,7 +41,8 @@ const UserProfile = ({timeOfAccountCreation }) => {
           <p className="user-profile-posts">Total Posts: {totalPosts}</p>
           <p className="user-profile-votes">Total Votes: {voteCount}</p>
           <p className="user-profile-creation-time">
-            Time of Account Creation: {new Date(userCreationTime).toDateString()}
+            Time of Account Creation:{" "}
+            {new Date(userCreationTime).toDateString()}
           </p>
         </div>
         <Link to="/Verified">

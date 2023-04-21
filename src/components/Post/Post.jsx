@@ -15,7 +15,7 @@ const Post = ({
   vote,
   link,
   username,
-  context
+  context,
 }) => {
   const queryClient = new QueryClient();
   const postServices = new PostServices();
@@ -46,12 +46,12 @@ const Post = ({
         </div>
         <p className={styles.desc}>{description}</p>
         <div className={styles.feedBacks}>
-          {
-            context !== "comment" && <Link to={`/comment/${postId}`}>
-            <i class="fa-solid fa-comment-dots"></i>Comments
-          </Link>
-          }
-        
+          {context !== "comment" && (
+            <Link to={`/comment/${postId}`}>
+              <i class="fa-solid fa-comment-dots"></i>Comments
+            </Link>
+          )}
+
           <div className={styles.reports}>
             <Link to="/ReportPost">
               <i class="fa-solid fa-triangle-exclamation"></i>Report
