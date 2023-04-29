@@ -3,7 +3,7 @@ import Post from "../Post/Post";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../Pages/Sidebar/Sidebar";
+// import Sidebar from "../Pages/Sidebar/Sidebar";
 import { useQuery } from "react-query";
 import Categories from "../Categories/Categories";
 import { PostServices } from "../../services/postServices";
@@ -24,7 +24,7 @@ const Posts = () => {
               postId={post._id}
               vote={post?.vote}
               link={post.link}
-              username={post.userId.username}
+              username={post.userId?.username}
             />
           ))}
         </div>
@@ -44,7 +44,7 @@ const Posts = () => {
               </Link>
             </div>
           )}
-          <Sidebar />
+          {/* <Sidebar /> */}
           <div className={styles.categWrap}>
             <Categories />
           </div>
