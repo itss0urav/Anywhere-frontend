@@ -5,12 +5,13 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { useMutation, useQueryClient } from "react-query";
 import { PostServices } from "../../services/postServices";
 import { useNavigate } from "react-router-dom";
-import { CircleLoader} from "react-spinners"
+import { CircleLoader } from "react-spinners";
 const Post = () => {
   const titleRef = useRef();
   const descriptionRef = useRef();
   const categoryRef = useRef();
   const linkRef = useRef();
+  const nsfwRef = useRef();
   const [image, setImage] = useState();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
@@ -38,63 +39,73 @@ const Post = () => {
       imageUrl: imgUrl,
       description: descriptionRef.current.value,
       link: linkRef.current.value,
-      // category: categoryRef.current.value,
+      category: categoryRef.current.value,
+      nsfw: nsfwRef.current.checked,
     };
     mutate(newPost);
   };
 
   return (
     <>
-    {
-      isLoading ? (
-        <div style={{height:"100vh", display:"grid", placeContent:"center"}}>
-          <CircleLoader color="#36d7b7" size={106}/>
+      {isLoading ? (
+        <div
+          style={{ height: "100vh", display: "grid", placeContent: "center" }}
+        >
+          <CircleLoader color="#36d7b7" size={106} />
         </div>
       ) : (
         <form onSubmit={handleSubmit} className={styles.formWrap}>
-        <h1 className={styles.header}>Create a Post</h1>
-  
-        <div>
+          <h1 className={styles.header}>Create a Post</h1>
+
+          <div>
+            <label>
+              Title:
+              <input type="text" ref={titleRef} required />
+            </label>
+          </div>
           <label>
-            Title:
-            <input type="text" ref={titleRef} required />
-          </label>
-        </div>
-        <label>
-          Image:
-          <input
-            type="file"
-            onChange={(event) => setImage(event.target.files[0])}
-          />
-        </label>
-        <div>
-          <label>
-            Link:
-            <input type="text" ref={linkRef} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Text:
-            <textarea
-              className={styles.commentWrap}
-              ref={descriptionRef}
-              required
+            Image:
+            <input
+              type="file"
+              onChange={(event) => setImage(event.target.files[0])}
             />
           </label>
-        </div>
-        <div>
-          <label>
-            Category:
-            <input type="text" ref={categoryRef} required />
-          </label>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-      )
-    }
+          <div>
+            <label>
+              Link:
+              <input type="text" ref={linkRef} />
+            </label>
+          </div>
+          <div>
+            <label>
+              Text:
+              <textarea
+                className={styles.commentWrap}
+                ref={descriptionRef}
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Category:
+              <input type="text" ref={categoryRef} required />
+            </label>
+          </div>
+          <div>
+            <label>
+              NSFW:
+              <label className={styles.checkboxLabel}>
+                <input type="checkbox" ref={nsfwRef} />
+                <span className={styles.checkmark}></span>
+              </label>
+            </label>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      )}
     </>
-  
   );
 };
 

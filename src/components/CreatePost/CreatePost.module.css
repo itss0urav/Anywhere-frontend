@@ -13,6 +13,59 @@
     rgb(0, 0, 0) 100%
   );
 }
+.checkboxLabel {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.checkboxLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+}
+
+.checkboxLabel:hover input ~ .checkmark {
+  background-color: #ffffff;
+}
+
+.checkboxLabel input:checked ~ .checkmark {
+  background-color: #d73636;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxLabel input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxLabel .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
 
 .header {
   text-align: center;
