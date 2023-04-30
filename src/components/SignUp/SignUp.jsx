@@ -26,6 +26,7 @@ const SignUp = () => {
       username: userNameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
+      role:"user"
     };
     // console.log(userDetails)
     mutate(userDetails);

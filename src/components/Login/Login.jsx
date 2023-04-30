@@ -26,6 +26,7 @@ const Login = () => {
     const userDetails = {
       email: emailRef.current.value,
       password: passwordRef.current.value,
+      role:"user"
     };
 
     await mutate(userDetails);
