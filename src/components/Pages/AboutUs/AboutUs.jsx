@@ -1,6 +1,17 @@
 import React from "react";
-import Developer from "./Dev";
 import styles from "./AboutUs.module.css";
+
+function Developer(props) {
+  const { photo, name, title, email } = props;
+  return (
+    <div className={styles.developer}>
+      <img className={styles.image} src={photo} alt={name} />
+      <h3>{name}</h3>
+      <p>{title}</p>
+      <p>{email}</p>
+    </div>
+  );
+}
 
 function AboutUs() {
   const developers = [
@@ -29,7 +40,7 @@ function AboutUs() {
       email: "gokulsabu02@gmail.com",
     },
     {
-      id: 3,
+      id: 4,
       name: "Sharon Shine",
       title: "Feasibility Study and Hardware and Software Management",
       photo:
