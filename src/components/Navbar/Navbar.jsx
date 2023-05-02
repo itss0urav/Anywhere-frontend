@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Navbar.module.css";
 import { Outlet, Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
+import axios from "axios";
+import { callApi } from "../../services/callApi";
 
 const Navbar = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser,posts, setPosts } = useContext(UserContext);
+
+  const searchRef = useRef()
+  
+  async function searchPost(){
+
+    const response = await callApi({
+      method:"get",
+      relativePath:`/post?title=${searchRef.current.value}`
+    })
+
+    setPosts(response?.data)
+  }
+
   return (
     <>
       <div className={styles.wrapper}>
@@ -25,9 +40,18 @@ const Navbar = () => {
               <input
                 type="text"
                 className={styles.serachBox}
+                ref={searchRef}
                 placeholder="Search posts here..."
+                onChange={(e) => {
+                  if(!e.target.value) searchPost()
+                }}
+                onKeyUp={(e) => {
+                  if(e.key === "Enter"){
+                    searchPost()
+                  }
+                }}
               />
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-magnifying-glass" onClick={() => searchPost()}></i>
             </div>
           </div>
           {/* Secode section */}
