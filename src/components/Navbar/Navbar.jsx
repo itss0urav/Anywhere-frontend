@@ -57,6 +57,9 @@ const Navbar = () => {
                 ></i>
               </>
             )}
+            <Link to="/tos">
+              <i class="fa-solid fa-question"></i>
+            </Link>
           </div>
         </div>
       </div>
