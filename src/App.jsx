@@ -13,7 +13,7 @@ import AboutUs from "./components/Pages/AboutUs/AboutUs";
 import Cmt from "./components/Comment/cmt";
 import ReportPost from "./components/Report/ReportPost";
 import Verified from "./components/Verified/Verified";
-import VerificationPage from "./components/Pages/requirements/requirements";
+import VerificationPage from "./components/Pages/Requirements/Requirements";
 import Tos from "./components/Pages/TOS/tos";
 
 function App() {
