@@ -1,0 +1,50 @@
+.TOS {
+    color: white;
+    background-color: #292929;
+    padding: 20px;
+  }
+  
+  .TOS h1,
+  .TOS h2 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .TOS ul {
+    margin-left: 0;
+    padding-left: 20px;
+    list-style: none;
+  }
+  
+  .TOS li {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .bullet-point {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .TOS li:hover .bullet-point {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  @media (max-width: 768px) {
+    .TOS {
+      font-size: 14px;
+    }
+  }
+  
