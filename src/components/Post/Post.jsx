@@ -45,7 +45,7 @@ const Post = ({
           <p>Posted by {username}</p>
         </div>
         <p className={styles.title}>{title}</p>
-        <p style={{display:"", position:"absolute", top:20, right:10, color:"red", fontWeight:500}}>NFSW</p>
+        {isNfsw && <p style={{display:"", position:"absolute", top:20, right:10, color:"red", fontWeight:900}}>NSFW</p>}
         <div className={styles.imageWrap}>
           <img src={imgUrl} onClick={handleImageClick} alt="computer" style={{filter:isNfsw && !nfswImageRevealState ? "blur(10px)" : ""}}/>
         </div>
