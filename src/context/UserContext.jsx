@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   setUser: () => {},
   userId:JSON.parse(localStorage.getItem("anywhere-user"))?.userId || null,
   posts:[],
+  role:JSON.parse(localStorage.getItem("anywhere-user"))?.role || null,
   setPosts:() => {}
  
 };
