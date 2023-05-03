@@ -7,18 +7,17 @@ import axios from "axios";
 import { callApi } from "../../services/callApi";
 
 const Navbar = () => {
-  const { user, setUser,posts, setPosts } = useContext(UserContext);
+  const { user, setUser, posts, setPosts } = useContext(UserContext);
 
-  const searchRef = useRef()
-  
-  async function searchPost(){
+  const searchRef = useRef();
 
+  async function searchPost() {
     const response = await callApi({
-      method:"get",
-      relativePath:`/post?title=${searchRef.current.value}&&isPrefix=${true}`
-    })
+      method: "get",
+      relativePath: `/post?title=${searchRef.current.value}&&isPrefix=${true}`,
+    });
 
-    setPosts(response?.data)
+    setPosts(response?.data);
   }
 
   return (
@@ -43,15 +42,18 @@ const Navbar = () => {
                 ref={searchRef}
                 placeholder="Search posts here..."
                 onChange={(e) => {
-                  if(!e.target.value) searchPost()
+                  if (!e.target.value) searchPost();
                 }}
                 onKeyUp={(e) => {
-                  if(e.key === "Enter"){
-                    searchPost()
+                  if (e.key === "Enter") {
+                    searchPost();
                   }
                 }}
               />
-              <i class="fa-solid fa-magnifying-glass" onClick={() => searchPost()}></i>
+              <i
+                class="fa-solid fa-magnifying-glass"
+                onClick={() => searchPost()}
+              ></i>
             </div>
           </div>
           {/* Secode section */}
