@@ -25,14 +25,16 @@ const Post = () => {
 
   //Function to create a new post
   const handleSubmit = async (event) => {
+    let imgUrl
     event.preventDefault();
-    const fileName = Date.now() + image.name;
-    const storageRef = ref(storage, fileName);
-    await uploadBytes(storageRef, image).then((snapshot) => {
-      console.log(snapshot);
-    });
-
-    const imgUrl = await getDownloadURL(ref(storage, fileName));
+    if(image){
+      const fileName = Date.now() + image.name;
+      const storageRef = ref(storage, fileName);
+      await uploadBytes(storageRef, image).then((snapshot) => {
+        console.log(snapshot);
+      });
+     imgUrl = await getDownloadURL(ref(storage, fileName));
+    }
 
     let newPost = {
       title: titleRef.current.value,
@@ -40,8 +42,9 @@ const Post = () => {
       description: descriptionRef.current.value,
       link: linkRef.current.value,
       category: categoryRef.current.value,
-      nsfw: nsfwRef.current.checked,
+      isNfsw: nsfwRef.current.checked,
     };
+    console.log(newPost)
     mutate(newPost);
   };
 
