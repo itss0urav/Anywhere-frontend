@@ -47,7 +47,7 @@ const Post = ({
         <p className={styles.title}>{title}</p>
         {isNfsw && <p style={{display:"", position:"absolute", top:20, right:10, color:"red", fontWeight:900}}>NSFW</p>}
         <div className={styles.imageWrap}>
-          <img src={imgUrl} onClick={handleImageClick} alt="computer" style={{filter:isNfsw && !nfswImageRevealState ? "blur(10px)" : ""}}/>
+          <img src={imgUrl} onClick={handleImageClick}  style={{filter:isNfsw && !nfswImageRevealState ? "blur(10px)" : ""}}/>
         </div>
         <div className={styles.linkGap}>
           <a href={link} style={{ zIndex: 20 }}>
