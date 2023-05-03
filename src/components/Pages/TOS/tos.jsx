@@ -14,9 +14,7 @@ const TOS = () => {
       <h2>Content</h2>
       <p>
         You are solely responsible for any content that you post or upload to
-        the site. By submitting content, you grant us a non-exclusive,
-        royalty-free, perpetual, and worldwide license to use, distribute, and
-        display your content in any media now known or later developed.
+        the site.
       </p>
       <h2>Conduct</h2>
       <ul>
@@ -48,11 +46,11 @@ const TOS = () => {
         the revised terms and conditions.
       </p>
       <p className="outro">
-        If you have any questions about our Terms of Service, please contact us <Link to="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">
-        <i class="fa-solid fa-handshake-angle fa-bounce"></i>
-      </Link>
+        If you have any questions, please contact us{" "}
+        <Link to="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">
+          <i class="fa-solid fa-handshake-angle fa-bounce"></i>
+        </Link>
       </p>
-      
     </div>
   );
 };
