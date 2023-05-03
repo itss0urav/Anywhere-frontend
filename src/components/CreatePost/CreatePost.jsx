@@ -40,8 +40,9 @@ const Post = () => {
       description: descriptionRef.current.value,
       link: linkRef.current.value,
       category: categoryRef.current.value,
-      nsfw: nsfwRef.current.checked,
+      isNfsw: nsfwRef.current.checked,
     };
+    console.log(newPost)
     mutate(newPost);
   };
 

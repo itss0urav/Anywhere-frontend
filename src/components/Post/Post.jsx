@@ -16,6 +16,7 @@ const Post = ({
   link,
   username,
   context,
+  isNfsw
 }) => {
   const queryClient = new QueryClient();
   const postServices = new PostServices();
@@ -37,7 +38,7 @@ const Post = ({
         </div>
         <p className={styles.title}>{title}</p>
         <div className={styles.imageWrap}>
-          <img src={imgUrl} alt="computer" />
+          <img src={imgUrl} alt="computer" style={{filter:isNfsw ? "blur(5px)" : ""}}/>
         </div>
         <div className={styles.linkGap}>
           <a href={link} style={{ zIndex: 20 }}>

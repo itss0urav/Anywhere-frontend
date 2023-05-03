@@ -25,6 +25,7 @@ const Posts = () => {
               vote={post?.vote}
               link={post.link}
               username={post?.userId?.username}
+              isNfsw={post?.isNfsw}
             />
           ))}
         </div>
