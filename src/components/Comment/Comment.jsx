@@ -14,7 +14,7 @@ const Comment = () => {
   const voteServices = useVoteService();
   const queryClient = useQueryClient();
   useQuery({
-    queryKey: ["postById", postId],
+    queryKey: [postId],
     queryFn: postServices.getPostById,
     onSuccess: (data) => {
       console.log(data);
@@ -68,6 +68,7 @@ const Comment = () => {
         vote={post?.vote}
         postId={post?._id}
         userid={post?.userId?._id}
+        isNfsw={post?.isNfsw}
         context="comment"
       />
       <div

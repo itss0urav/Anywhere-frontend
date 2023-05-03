@@ -27,29 +27,27 @@ export class PostServices {
     return res?.data;
   }
 
-  async getPostById({queryKey}) {
-
+  async getPostById({ queryKey }) {
     const response = await callApi({
-      method:"get",
-      relativePath:`/post?_id=${queryKey[1]}`
-    })
-    return response?.data
+      method: "get",
+      relativePath: `/post?_id=${queryKey[0]}`,
+    });
+    return response?.data;
   }
 
-  async createComment(args){
+  async createComment(args) {
     const response = await callApi({
-      method:"post",
-      relativePath:"/comment",
-      apiData:args
-    })
-    return response?.data
+      method: "post",
+      relativePath: "/comment",
+      apiData: args,
+    });
+    return response?.data;
   }
-  async getComments({queryKey}){
+  async getComments({ queryKey }) {
     const response = await callApi({
-      method:"get",
-      relativePath:`/comment?postId=${queryKey[1]}`,
-    })
-    return response?.data
+      method: "get",
+      relativePath: `/comment?postId=${queryKey[1]}`,
+    });
+    return response?.data;
   }
-
 }

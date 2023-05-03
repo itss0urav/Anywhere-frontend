@@ -20,6 +20,7 @@ const Post = ({
 }) => {
   const queryClient = new QueryClient();
   const postServices = new PostServices();
+  const [nfswImageRevealState, setNfswImageRevealState] = useState(false)
   const { mutate } = useMutation(postServices.deletePost, {
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
@@ -28,6 +29,13 @@ const Post = ({
 
   const { userId } = useContext(UserContext);
 
+
+  function handleImageClick(){
+
+    if(isNfsw){
+      setNfswImageRevealState(true)
+    }
+  }
   return (
     <div className={styles.postWrap}>
       <Vote vote={vote} postId={postId} />
@@ -37,8 +45,9 @@ const Post = ({
           <p>Posted by {username}</p>
         </div>
         <p className={styles.title}>{title}</p>
+        <p style={{display:"", position:"absolute", top:20, right:10, color:"red", fontWeight:500}}>NFSW</p>
         <div className={styles.imageWrap}>
-          <img src={imgUrl} alt="computer" style={{filter:isNfsw ? "blur(5px)" : ""}}/>
+          <img src={imgUrl} onClick={handleImageClick} alt="computer" style={{filter:isNfsw && !nfswImageRevealState ? "blur(10px)" : ""}}/>
         </div>
         <div className={styles.linkGap}>
           <a href={link} style={{ zIndex: 20 }}>
