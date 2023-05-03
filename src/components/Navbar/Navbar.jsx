@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const response = await callApi({
       method:"get",
-      relativePath:`/post?title=${searchRef.current.value}`
+      relativePath:`/post?title=${searchRef.current.value}&&isPrefix=true`
     })
 
     setPosts(response?.data)
