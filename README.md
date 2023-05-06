@@ -8,8 +8,8 @@ Re-use not allowed without permission
 
 A communiy discussion website 🔥
 
-BackEnd: [https://github.com/itss0urav/Anywhere-BackEnd]  🔥
+BackEnd: [https://github.com/itss0urav/Anywhere-BackEnd] 🔥
 
-Admin  : [https://github.com/itss0urav/Anywhere-Admin]  🔥
+Admin : [https://github.com/itss0urav/Anywhere-Admin] 🔥
 
 Thanks to Nikesh [https://github.com/Nikeshkumar-tk] for the help
