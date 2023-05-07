@@ -1,9 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { usePostServices, useVoteService } from "../../customHooks/Services";
 import { BiUpvote, BiDownvote } from "react-icons/bi";
 import Post from "../Post/Post";
+import { UserContext } from "../../context/UserContext";
+import {AiFillDelete} from "react-icons/ai"
+import { callApi } from "../../services/callApi";
 
 const Comment = () => {
   const { postId } = useParams();
@@ -13,6 +16,7 @@ const Comment = () => {
   const postServices = usePostServices();
   const voteServices = useVoteService();
   const queryClient = useQueryClient();
+  const { userId } = useContext(UserContext)
   useQuery({
     queryKey: [postId],
     queryFn: postServices.getPostById,
@@ -56,6 +60,14 @@ const Comment = () => {
 
   async function handleVote(params) {
     await vote(params);
+  }
+
+  async function deleteComment(id){
+    await callApi({
+      relativePath:`/comment/${id}`,
+      method:"delete"
+    })
+    queryClient.invalidateQueries("commentsById")
   }
   return (
     <div style={{ width: "50%", paddingLeft: "20%" }}>
@@ -128,9 +140,14 @@ const Comment = () => {
                       }
                     />
                   </div>
-                  <h6 style={{ alignSelf: "end" }}>
+                  <div style={{ alignSelf: "end", display:"flex", gap:3, alignItems:"center" }}>
+                  <h6 >
                     Commented by {comment.userId.username}
                   </h6>
+                  <p>
+                  {comment?.userId._id === userId && <AiFillDelete onClick={() => deleteComment(comment?._id)}/>}
+                  </p>
+                  </div>
                 </div>
               </div>
             );

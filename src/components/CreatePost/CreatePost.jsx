@@ -19,6 +19,7 @@ const Post = () => {
   const { mutate, isLoading, isError } = useMutation(postServices.createPost, {
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
+      queryClient.invalidateQueries("Categories")
       navigate("/");
     },
   });

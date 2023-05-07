@@ -19,6 +19,7 @@ const Vote = ({ vote, postId }) => {
     mutationFn: voteServices.upVote,
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
+      queryClient.invalidateQueries(postId);
     },
   });
 
@@ -27,6 +28,8 @@ const Vote = ({ vote, postId }) => {
     mutationFn: voteServices.downVote,
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
+      queryClient.invalidateQueries(postId);
+
     },
   });
 
