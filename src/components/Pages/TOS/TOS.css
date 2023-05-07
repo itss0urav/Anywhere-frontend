@@ -4,10 +4,10 @@
   padding: 20px;
 }
 a:link {
-  color: white;
+  color: blue;
 }
 a:visited {
-  color: cyan;
+  color:blue;
 }
 
 .TOS h1,
