@@ -25,6 +25,7 @@ export const UserContextProvider = ({ children }) => {
       console.log(data);
       setPosts(data);
     },
+    refetchOnWindowFocus:false
   });
   return (
     <UserContext.Provider
