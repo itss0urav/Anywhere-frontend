@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./Navbar.module.css";
 import { Outlet, Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
@@ -8,7 +8,7 @@ import { callApi } from "../../services/callApi";
 
 const Navbar = () => {
   const { user, setUser, posts, setPosts } = useContext(UserContext);
-
+  const [selected, setSelected] = useState()
   const searchRef = useRef();
 
   async function searchPost() {
