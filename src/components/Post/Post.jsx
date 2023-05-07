@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { QueryClient, useMutation } from "react-query";
 import { PostServices } from "../../services/postServices";
-import { useVoteService } from "../../customHooks/Services";
+import {MdVerified} from "react-icons/md"
 const Post = ({
   imgUrl,
   title,
@@ -29,7 +29,7 @@ const Post = ({
 
   const { userId, role } = useContext(UserContext);
 
-
+console.log(role)
   function handleImageClick(){
 
     if(isNfsw){
@@ -42,7 +42,14 @@ const Post = ({
 
       <div className={styles.wrap}>
         <div className={styles.userNAme}>
-          <p>Posted by {username}</p>
+          <p style={{display:"flex", alignItems:"center", gap:8}}>
+            <>
+            Posted by {username}
+            </>
+            <>
+            {userid?.isVerified && <MdVerified />}
+            </>
+        </p>
         </div>
         <p className={styles.title}>{title}</p>
         {isNfsw && <p style={{display:"", position:"absolute", top:20, right:10, color:"red", fontWeight:900}}>NSFW</p>}
@@ -68,7 +75,7 @@ const Post = ({
             </Link>
           </div>
           <div className={styles.deleteButtonWrap}>
-            {(userid?._id == userId || userid?.role === "moderator") && (
+            {(userid?._id == userId || role === "moderator") && (
               <p style={{ cursor: "pointer" }} onClick={() => mutate(postId)}>
                 <i class="fa-solid fa-trash-can"></i>Delete
               </p>
