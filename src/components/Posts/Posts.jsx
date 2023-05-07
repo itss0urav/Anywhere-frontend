@@ -3,7 +3,6 @@ import Post from "../Post/Post";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
-// import Sidebar from "../Pages/Sidebar/Sidebar";
 import { useQuery } from "react-query";
 import Categories from "../Categories/Categories";
 import { PostServices } from "../../services/postServices";
@@ -45,7 +44,12 @@ const Posts = () => {
               </Link>
             </div>
           )}
-          {/* <Sidebar /> */}
+
+          <div className={styles.createPostWrap}>
+              <Link to="/">
+                <button className={styles.createPostBtn}>Trending🔥</button>
+              </Link>
+            </div>
           <div className={styles.categWrap}>
             <Categories />
           </div>

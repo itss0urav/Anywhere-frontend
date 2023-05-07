@@ -34,7 +34,7 @@ response && setPosts(response?.data)
   return (
     <div className={styles.categorylist}>
       <h2 className={styles.categorylisttitle}>Categories</h2>
-      <div style={{display:"flex", flexDirection:"column", gap:10}}>
+      <div style={{display:"flex", flexDirection:"column", gap:10  }}>
 
      {
       categories.map((category) => (
