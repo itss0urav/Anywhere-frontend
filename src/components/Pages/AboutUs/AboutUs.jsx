@@ -18,7 +18,7 @@ function AboutUs() {
     {
       id: 1,
       name: "Sourav S",
-      title: "Lead Developer",
+      title: "Lead Developer & Project Manager",
       photo:
         "https://media.discordapp.net/attachments/1070984839077036052/1079693185279864882/1.png?width=911&height=606",
       email: "souravhacks987@gmail.com",
@@ -26,7 +26,7 @@ function AboutUs() {
     {
       id: 2,
       name: "Amal Sam jacob",
-      title: "Producer & Documentation Lead",
+      title: "Co - Developer & DB Administrator",
       photo:
         "https://media.discordapp.net/attachments/1070984839077036052/1079692614942597170/3.png?width=911&height=544",
       email: "amalsam0898@gmail.com",
@@ -34,15 +34,15 @@ function AboutUs() {
     {
       id: 3,
       name: "Gokul P Sabu",
-      title: "Co - Developer",
+      title: "Co - Developer & DB Administrator",
       photo:
-        "https://media.discordapp.net/attachments/1070984839077036052/1079693494949527572/2.png?width=911&height=604",
+        "https://cdn.discordapp.com/attachments/1070984839077036052/1104759451459797092/DSC07600.jpg",
       email: "gokulsabu02@gmail.com",
     },
     {
       id: 4,
       name: "Sharon Shine",
-      title: "Feasibility Study and Hardware and Software Management",
+      title: "Web Designer and Tech Support",
       photo:
         "https://cdn.discordapp.com/attachments/979241917852303370/1083277442195652719/IMG_0132.png",
       email: "sharonshine2002@gmail.com",
