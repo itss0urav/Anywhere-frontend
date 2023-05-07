@@ -68,7 +68,7 @@ const Post = ({
             </Link>
           </div>
           <div className={styles.deleteButtonWrap}>
-            {(userid?._id == userId || userid?.role === role) && (
+            {(userid?._id == userId || userid?.role === "moderator") && (
               <p style={{ cursor: "pointer" }} onClick={() => mutate(postId)}>
                 <i class="fa-solid fa-trash-can"></i>Delete
               </p>
