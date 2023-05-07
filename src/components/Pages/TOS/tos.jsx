@@ -47,7 +47,7 @@ const TOS = () => {
       </p>
       <p className="outro">
         If you have any questions, please contact us{" "}
-        <Link to="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">
+        <Link to="">
           <i class="fa-solid fa-handshake-angle fa-bounce"></i>
         </Link>
       </p>
