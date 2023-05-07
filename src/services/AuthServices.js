@@ -18,7 +18,7 @@ export class AuthService {
   async loginUser(userDetails) {
     try {
       const result = await axios.post(`${BASE_URL}/auth/login`, userDetails);
-      return result.data;
+      return result;
     } catch (err) {
       console.log(err);
     }

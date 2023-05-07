@@ -14,7 +14,12 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { mutate, isLoading } = useMutation(authenticate.loginUser, {
-    onSuccess: (data) => {
+    onSuccess: ({data, status}) => {
+      console.log(data)
+      if(status === 201){
+        alert("You are banned by anywhere")
+        return
+      }
       localStorage.setItem("anywhere-user", JSON.stringify(data));
       setUser(data.username);
       navigate("/");
