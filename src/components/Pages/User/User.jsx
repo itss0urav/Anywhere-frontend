@@ -54,6 +54,9 @@ const UserProfile = ({ timeOfAccountCreation }) => {
         <Link to="/FeedbackForm">
           <button className={styles.authBtn}>FeedbackForm</button>
         </Link>
+        <Link to="/manageUsers">
+          <button className={styles.authBtn}>Manage users</button>
+        </Link>
       </div>
     </div>
   );

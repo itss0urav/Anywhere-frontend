@@ -15,13 +15,14 @@ import ReportPost from "./components/Report/ReportPost";
 import Verified from "./components/Verified/Verified";
 import VerificationPage from "./components/Pages/requirements/requirements";
 import Tos from "./components/Pages/TOS/tos";
+import Overview from "./components/modals/Overview";
+import ManageUsers from "./components/ManageaUsers";
 
 function App() {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
-          
           <Route path="/" element={<Navbar />}>
             <Route path="/" element={<Posts />} />
             <Route path="/comment/:postId" element={<Comment />} />
@@ -31,6 +32,8 @@ function App() {
             <Route path="/ReportPost" element={<ReportPost />} />
             <Route path="/Requirements" element={<VerificationPage />} />
             <Route path="/tos" element={<Tos />} />
+            <Route path="/manageUsers" element={<ManageUsers />} />
+            <Route path="/overview/:postId" element={<Overview />} />
           </Route>
           <Route path="logIn" element={<Login />} />
           <Route path="signUp" element={<SignUp />} />

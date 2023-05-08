@@ -81,8 +81,10 @@ console.log(role)
               </p>
             )}
           </div>
+          <Link to={`/overview/${postId}`}>Overview</Link>
         </div>
       </div>
+     
     </div>
   );
 };

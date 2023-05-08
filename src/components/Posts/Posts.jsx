@@ -7,6 +7,7 @@ import { useQuery } from "react-query";
 import Categories from "../Categories/Categories";
 import { PostServices } from "../../services/postServices";
 import { Outlet, Link } from "react-router-dom";
+import Overview from "../modals/Overview";
 const Posts = () => {
   const { user, posts } = useContext(UserContext);
 

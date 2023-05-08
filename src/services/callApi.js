@@ -20,7 +20,8 @@ export async function callApi(data) {
   } catch (error) {
     console.log(error);
     if(error.response.status === 401){
-      alert("Your session has expired. Please login again.")
+      // alert("Your session has expired. Please login again.")
+      // window.location.replace("/login")
     }
   }
 }

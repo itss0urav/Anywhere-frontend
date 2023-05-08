@@ -1,20 +1,35 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./FeedbackForm.module.css";
 import Navbar from "../../Navbar/Navbar";
+import { UserContext } from "../../../context/UserContext";
+import { callApi } from "../../../services/callApi";
+import { useNavigate } from "react-router-dom";
+
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0);
   const [comments, setComments] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState(null);
-
-  const handleSubmit = (event) => {
+  const { userId } = useContext(UserContext);
+  const navigate = useNavigate()
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSuccessMessage("Thank you for submitting your feedback!");
-    setRating(0);
-    setComments("");
-    setName("");
-    setEmail("");
+
+    const feedBackObj = {
+      rating,
+      description: comments,
+      username: name,
+      email,
+      userId:userId
+    };
+
+    await callApi({
+      relativePath:"/feedback",
+      method:"post",
+      apiData:feedBackObj
+    })
+    navigate("/")
   };
 
   return (
@@ -56,8 +71,7 @@ const FeedbackForm = () => {
             <select
               value={rating}
               onChange={(event) => setRating(event.target.value)}
-              required
-            >
+              required>
               <option value={0}>Select a Rating</option>
               <option value={1}>1</option>
               <option value={2}>2</option>
