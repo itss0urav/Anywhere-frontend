@@ -98,7 +98,7 @@ const Post = () => {
           </div>
           <div>
             <label>
-              NSFW:
+              NotSafeForWork:
               <label className={styles.checkboxLabel}>
                 <input type="checkbox" ref={nsfwRef} />
                 <span className={styles.checkmark}></span>

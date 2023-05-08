@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { QueryClient, useMutation } from "react-query";
 import { PostServices } from "../../services/postServices";
-import {MdVerified} from "react-icons/md"
+import { MdVerified } from "react-icons/md";
+import { AiOutlineFileSearch } from "react-icons/ai";
 const Post = ({
   imgUrl,
   title,
@@ -16,11 +17,11 @@ const Post = ({
   link,
   username,
   context,
-  isNfsw
+  isNfsw,
 }) => {
   const queryClient = new QueryClient();
   const postServices = new PostServices();
-  const [nfswImageRevealState, setNfswImageRevealState] = useState(false)
+  const [nfswImageRevealState, setNfswImageRevealState] = useState(false);
   const { mutate } = useMutation(postServices.deletePost, {
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
@@ -29,11 +30,10 @@ const Post = ({
 
   const { userId, role } = useContext(UserContext);
 
-console.log(role)
-  function handleImageClick(){
-
-    if(isNfsw){
-      setNfswImageRevealState(true)
+  console.log(role);
+  function handleImageClick() {
+    if (isNfsw) {
+      setNfswImageRevealState(true);
     }
   }
   return (
@@ -42,19 +42,34 @@ console.log(role)
 
       <div className={styles.wrap}>
         <div className={styles.userNAme}>
-          <p style={{display:"flex", alignItems:"center", gap:8}}>
-            <>
-            Posted by {username}
-            </>
-            <>
-            {userid?.isVerified && <MdVerified />}
-            </>
-        </p>
+          <p style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <>Posted by {username}</>
+            <>{userid?.isVerified && <MdVerified />}</>
+          </p>
         </div>
         <p className={styles.title}>{title}</p>
-        {isNfsw && <p style={{display:"", position:"absolute", top:20, right:10, color:"red", fontWeight:900}}>NSFW</p>}
+        {isNfsw && (
+          <p
+            style={{
+              display: "",
+              position: "absolute",
+              top: 20,
+              right: 10,
+              color: "red",
+              fontWeight: 900,
+            }}
+          >
+            NSFW
+          </p>
+        )}
         <div className={styles.imageWrap}>
-          <img src={imgUrl} onClick={handleImageClick}  style={{filter:isNfsw && !nfswImageRevealState ? "blur(10px)" : ""}}/>
+          <img
+            src={imgUrl}
+            onClick={handleImageClick}
+            style={{
+              filter: isNfsw && !nfswImageRevealState ? "blur(10px)" : "",
+            }}
+          />
         </div>
         <div className={styles.linkGap}>
           <a href={link} style={{ zIndex: 20 }}>
@@ -81,10 +96,14 @@ console.log(role)
               </p>
             )}
           </div>
-          <Link to={`/overview/${postId}`}>Overview</Link>
+          <div className={styles.deleteButtonWrap}>
+            <Link to={`/overview/${postId}`}>
+              <AiOutlineFileSearch />
+              Overview
+            </Link>
+          </div>
         </div>
       </div>
-     
     </div>
   );
 };

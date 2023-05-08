@@ -33,7 +33,7 @@ const Overview = () => {
   return (
     <div
       style={{
-       color:"white"
+        width: "50%", paddingLeft: "20%" 
       }}>
        <Post 
        title={post?.title} 
