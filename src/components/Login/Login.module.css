@@ -18,6 +18,9 @@
   );
   color: white;
 }
+.contactUsButton {
+  margin-left: 3rem;
+}
 .formWrap input {
   outline: none;
   height: 2rem;

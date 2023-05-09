@@ -14,11 +14,11 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const { mutate, isLoading } = useMutation(authenticate.loginUser, {
-    onSuccess: ({data, status}) => {
-      console.log(data)
-      if(status === 201){
-        alert("You are banned by anywhere")
-        return
+    onSuccess: ({ data, status }) => {
+      console.log(data);
+      if (status === 201) {
+        alert("You are banned by anywhere");
+        return;
       }
       localStorage.setItem("anywhere-user", JSON.stringify(data));
       setUser(data.username);
@@ -48,10 +48,7 @@ const Login = () => {
         <div className={styles.wrappper}>
           <form className={styles.formWrap} onSubmit={loginUser}>
             <span className={styles.loginCaption}>LogIn</span>
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              ref={emailRef} />
+            <input type="email" placeholder="Enter your email" ref={emailRef} />
             <input
               type="password"
               placeholder="Enter your password"
@@ -64,6 +61,11 @@ const Login = () => {
                 {" "}
                 SignUp
               </Link>
+              <p className={styles.contactUsButton}>
+                <a href="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">
+                  Contact US
+                </a>
+              </p>
             </span>
           </form>
         </div>

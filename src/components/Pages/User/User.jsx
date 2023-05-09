@@ -5,22 +5,13 @@ import { UserContext } from "./../../../context/UserContext";
 import { Link } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import { useQuery } from "react-query";
-import { useVoteService } from "../../../customHooks/Services";
 import { useUserServices } from "../../../services/userServices";
-const UserProfile = ({ timeOfAccountCreation }) => {
-  const { user } = useContext(UserContext);
+const UserProfile = ({}) => {
+  const { user, role } = useContext(UserContext);
   const [totalPosts, setTotalPosts] = useState();
   const [voteCount, setVoteCount] = useState(0);
   const [userCreationTime, setUserCreationTime] = useState();
-  const voteServices = useVoteService();
   const userServices = useUserServices();
-  // useQuery({
-  //   queryKey:["voteCount"],
-  //   queryFn:voteServices.getVoteCount,
-  //   onSuccess:(data) => {
-  //     console.log("logging voteCount", data)
-  //     setVoteCount(data?.voteCount)}
-  // })
   useQuery({
     queryKey: ["userData"],
     queryFn: userServices.getUserInfo,
@@ -54,9 +45,12 @@ const UserProfile = ({ timeOfAccountCreation }) => {
         <Link to="/FeedbackForm">
           <button className={styles.authBtn}>FeedbackForm</button>
         </Link>
-        <Link to="/manageUsers">
-          <button className={styles.authBtn}>Manage users</button>
-        </Link>
+
+        {role === "moderator" && (
+          <Link to="/manageUsers">
+            <button className={styles.authBtn}>Manage Users</button>
+          </Link>
+        )}
       </div>
     </div>
   );
