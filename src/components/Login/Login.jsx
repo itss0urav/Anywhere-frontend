@@ -54,7 +54,10 @@ const Login = () => {
               placeholder="Enter your password"
               ref={passwordRef}
             />
-            <button>LogIn</button>
+            <div className={styles.buttonFix}>
+              <button>LogIn</button>
+            </div>
+
             <span className={styles.signup}>
               New to Anywhere ?
               <Link to="/signUp" className="link">

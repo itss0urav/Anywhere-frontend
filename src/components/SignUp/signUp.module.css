@@ -18,6 +18,9 @@
   );
   color: white;
 }
+.buttonFix{
+  margin-right: 1rem;
+}
 .contactUsButton{
   margin-left:4rem ;
 }

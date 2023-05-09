@@ -62,7 +62,10 @@ const SignUp = () => {
               required
               ref={passwordRef}
             />
-            <button>SignUp</button>
+            <div className={styles.buttonFix}>
+              <button>SignUp</button>
+            </div>
+
             <span className={styles.signup}>
               Already have an account ?{" "}
               <Link to="/login" className="link">
