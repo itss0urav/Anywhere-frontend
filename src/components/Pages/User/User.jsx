@@ -48,7 +48,17 @@ const UserProfile = ({}) => {
 
         {role === "moderator" && (
           <Link to="/manageUsers">
-            <button className={styles.authBtn}>Manage Users</button>
+            <button className={styles.modBtn}>Manage Users</button>
+          </Link>
+        )}
+        {role === "moderator" && (
+          <Link to="/">
+            <button className={styles.modBtn}>Feedbacks</button>
+          </Link>
+        )}
+        {role === "moderator" && (
+          <Link to="/">
+            <button className={styles.modBtn}>Reports</button>
           </Link>
         )}
       </div>
