@@ -11,7 +11,7 @@ const FeedbackForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState(null);
-  const { userId } = useContext(UserContext);
+  const { user, userId } = useContext(UserContext);
   const navigate = useNavigate()
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ const FeedbackForm = () => {
     const feedBackObj = {
       rating,
       description: comments,
-      username: name,
+      username: user,
       email,
       userId:userId
     };
