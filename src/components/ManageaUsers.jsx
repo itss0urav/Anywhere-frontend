@@ -13,7 +13,7 @@ const ManageUsers = () => {
   useEffect(() => {
     getUsers();
   }, []);
-  
+
   async function banUnBanUser({ userId, banStatus }) {
     const response = await axios.patch("http://localhost:5000/user", {
       userId,

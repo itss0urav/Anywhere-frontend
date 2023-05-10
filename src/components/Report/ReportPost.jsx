@@ -7,10 +7,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function ReportPost() {
-  const {userId } = useContext(UserContext);
+  const { userId } = useContext(UserContext);
   const reportReasonRef = useRef();
   const { postId } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const notify = () => toast("Reported post successfully");
 
   const handleReportSubmit = async (event) => {
@@ -18,25 +18,23 @@ function ReportPost() {
     const reportObj = {
       userId,
       postId,
-      reason:reportReasonRef.current.value
-    }
+      reason: reportReasonRef.current.value,
+    };
     const response = await callApi({
-      relativePath:"/report",
-      method:"post",
-      apiData:reportObj
-    })
+      relativePath: "/report",
+      method: "post",
+      apiData: reportObj,
+    });
 
-
-    if(response.status === 200) {
-      notify()
+    if (response.status === 200) {
+      notify();
       setTimeout(() => {
-        navigate("/")
+        navigate("/");
       }, 500);
     }
-     
-   if(response) reportReasonRef.current.value = null
-  };
 
+    if (response) reportReasonRef.current.value = null;
+  };
 
   return (
     <div className={styles.reportpost}>
@@ -44,7 +42,7 @@ function ReportPost() {
       <form onSubmit={handleReportSubmit}>
         <label>
           Reason for report:
-          <textarea ref={reportReasonRef}  required />
+          <textarea ref={reportReasonRef} required />
         </label>
         <button type="submit">Submit Report</button>
       </form>

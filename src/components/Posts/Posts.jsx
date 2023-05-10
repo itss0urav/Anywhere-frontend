@@ -47,10 +47,10 @@ const Posts = () => {
           )}
 
           <div className={styles.createPostWrap}>
-              <Link to="/">
-                <button className={styles.createPostBtn}>Trending🔥</button>
-              </Link>
-            </div>
+            <Link to="/">
+              <button className={styles.createPostBtn}>Trending🔥</button>
+            </Link>
+          </div>
           <div className={styles.categWrap}>
             <Categories />
           </div>

@@ -29,7 +29,6 @@ const Vote = ({ vote, postId }) => {
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
       queryClient.invalidateQueries(postId);
-
     },
   });
 
