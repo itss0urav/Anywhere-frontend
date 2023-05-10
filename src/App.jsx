@@ -17,6 +17,7 @@ import VerificationPage from "./components/Pages/requirements/requirements";
 import Tos from "./components/Pages/TOS/tos";
 import Overview from "./components/modals/Overview";
 import ManageUsers from "./components/ManageaUsers";
+import Trending from "./components/Trending";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/tos" element={<Tos />} />
             <Route path="/manageUsers" element={<ManageUsers />} />
             <Route path="/overview/:postId" element={<Overview />} />
+            <Route path="/trending" element={<Trending />} />
           </Route>
           <Route path="logIn" element={<Login />} />
           <Route path="signUp" element={<SignUp />} />
