@@ -47,7 +47,7 @@ const Posts = () => {
           )}
 
           <div className={styles.createPostWrap}>
-            <Link to="/">
+            <Link to="/trending">
               <button className={styles.createPostBtn}>Trending🔥</button>
             </Link>
           </div>

@@ -16,15 +16,25 @@ const Trending = () => {
   }, []);
 
   return (
-    <div style={{ color: "white", position:"relative" }}>
-      <h2 style={{marginBottom:30, marginLeft:26, fontFamily:"cursive"}}>Top trending posts</h2>
+    <div style={{ color: "white", position: "relative" }}>
+      <h2
+        style={{
+          marginBottom: 30,
+          textAlign: "center",
+          marginLeft: 26,
+          fontFamily: "poppins",
+        }}
+      >
+        Top trending posts
+      </h2>
       <div
         style={{
           color: "black",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-        }}>
+        }}
+      >
         {trendingPosts.map((post) => (
           <Post
             postId={post._id}
