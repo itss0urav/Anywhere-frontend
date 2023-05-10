@@ -15,7 +15,7 @@ const VerifiedPartnerForm = () => {
   const websiteRef = useRef();
   const fullNameRef = useRef();
   const [governmentId, setGovernmentId] = useState();
-  const { userId } = useContext(UserContext);
+  const { userId, user } = useContext(UserContext);
   const navigate = useNavigate();
   const notify = () => toast("Verifcation request send successfully");
 
@@ -31,7 +31,7 @@ const VerifiedPartnerForm = () => {
 
     console.log(fileUrl);
     const requestObj = {
-      fullName: fullNameRef.current.value,
+      fullName: user,
       company: companyRef.current.value,
       website: websiteRef.current.value,
       email: emailRef.current.value,
