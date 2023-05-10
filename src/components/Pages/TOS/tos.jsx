@@ -14,7 +14,8 @@ const TOS = () => {
       <h2>Content</h2>
       <p>
         You are solely responsible for any content that you post or upload to
-        the site.
+        the site. Posting NSFW(Not Safe For Work) content without putting the
+        tag is rule breaking.
       </p>
       <h2>Conduct</h2>
       <ul>

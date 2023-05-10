@@ -1,6 +1,7 @@
 .wrap {
   max-width: 100%;
   padding: 30px 6rem;
+  font-family: poppins;
 }
 .innerWrap {
   display: flex;
@@ -9,12 +10,15 @@
   /* padding: 0 2rem; */
   padding-right: 6.5rem;
 }
-.createPostWrap{
+.createPostWrap {
   margin-right: 10px;
+  font-family: poppins;
 }
 .sideCompWrapper {
   margin: 0;
+  font-family: poppins;
 }
-.categWrap{
+.categWrap {
   margin-top: 1rem;
+  font-family: poppins;
 }

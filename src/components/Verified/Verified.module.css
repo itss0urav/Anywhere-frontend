@@ -2,7 +2,7 @@ form {
     margin: 2rem;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    font-family: poppins;
     padding: 2rem;
     color: white;
     background: linear-gradient(
@@ -13,6 +13,7 @@ form {
       );
     border-radius: 5px;
   }
+  
   .reqWrap{
     margin-top: 19rem;
     margin-bottom: 19rem;
@@ -46,4 +47,4 @@ form {
   button:hover {
     background-color: #0062cc;
   }
-  
+ 

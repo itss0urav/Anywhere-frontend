@@ -5,6 +5,7 @@
   padding: 20px;
   text-align: center;
   color: rgb(255, 255, 255);
+  font-family: poppins;
 }
 
 .team {
@@ -16,7 +17,7 @@
 }
 
 .developer {
-  position: relative; /* Make the developer element a positioned container for the absolute positioning of the info overlay */
+  position: relative;
 }
 
 .developer:hover .info {
@@ -28,11 +29,11 @@
   width: 400px;
   object-fit: cover;
   color: white;
-  transition: box-shadow 0.3s ease; /* Add a transition to smooth the hover effect */
+  transition: box-shadow 0.3s ease;
 }
 
 .image:hover {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Add a glow effect on hover */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .info {
@@ -47,8 +48,8 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
-  opacity: 0; /* Hide the info overlay by default */
-  transition: opacity 0.3s ease; /* Add a transition to smooth the reveal effect */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .info h3,

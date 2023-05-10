@@ -1,6 +1,7 @@
 .wrappper {
   margin: 2rem;
   display: grid;
+  font-family: poppins;
 }
 .modBtn{
   color: red;

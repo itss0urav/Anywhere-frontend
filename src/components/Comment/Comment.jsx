@@ -91,7 +91,7 @@ const Comment = () => {
           paddingRight: "1rem",
         }}
       >
-        <h3 style={{ fontFamily: "Lato" }}>Comments</h3>
+        <h3 style={{ fontFamily: "Poppins" }}>Comments</h3>
         {/* <div style={{height:"1px", width:"90%", backgroundColor:"black"}}></div> */}
         <div
           style={{
