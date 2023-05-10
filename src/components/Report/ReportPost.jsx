@@ -1,19 +1,42 @@
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import styles from "./ReportPost.module.css";
+import { UserContext } from "../../context/UserContext";
+import { useNavigate, useParams } from "react-router-dom";
+import { callApi } from "../../services/callApi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function ReportPost({ postId }) {
-  const [reportReason, setReportReason] = useState("");
+function ReportPost() {
+  const {userId } = useContext(UserContext);
+  const reportReasonRef = useRef();
+  const { postId } = useParams();
+  const navigate = useNavigate()
+  const notify = () => toast("Reported post successfully");
 
-  const handleReportChange = (event) => {
-    setReportReason(event.target.value);
-  };
-
-  const handleReportSubmit = (event) => {
+  const handleReportSubmit = async (event) => {
     event.preventDefault();
-    // Call a function to submit the report to the server
-    // and then clear the report reason
-    setReportReason("");
+    const reportObj = {
+      userId,
+      postId,
+      reason:reportReasonRef.current.value
+    }
+    const response = await callApi({
+      relativePath:"/report",
+      method:"post",
+      apiData:reportObj
+    })
+
+
+    if(response.status === 200) {
+      notify()
+      setTimeout(() => {
+        navigate("/")
+      }, 500);
+    }
+     
+   if(response) reportReasonRef.current.value = null
   };
+
 
   return (
     <div className={styles.reportpost}>
@@ -21,14 +44,11 @@ function ReportPost({ postId }) {
       <form onSubmit={handleReportSubmit}>
         <label>
           Reason for report:
-          <textarea
-            value={reportReason}
-            onChange={handleReportChange}
-            required
-          />
+          <textarea ref={reportReasonRef}  required />
         </label>
         <button type="submit">Submit Report</button>
       </form>
+      <ToastContainer />
     </div>
   );
 }

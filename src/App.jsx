@@ -29,7 +29,7 @@ function App() {
             <Route path="/Verified" element={<Verified />} />
             <Route path="/AboutUs" element={<AboutUs />} />
             <Route path="/cmt" element={<Cmt />} />
-            <Route path="/ReportPost" element={<ReportPost />} />
+            <Route path="/ReportPost/:postId" element={<ReportPost />} />
             <Route path="/Requirements" element={<VerificationPage />} />
             <Route path="/tos" element={<Tos />} />
             <Route path="/manageUsers" element={<ManageUsers />} />

@@ -85,7 +85,7 @@ const Post = ({
           )}
 
           <div className={styles.reports}>
-            <Link to="/ReportPost">
+            <Link to={`/ReportPost/${postId}`}>
               <i class="fa-solid fa-triangle-exclamation"></i>Report
             </Link>
           </div>

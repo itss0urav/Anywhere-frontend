@@ -5,17 +5,6 @@ import { useEffect, useState } from "react";
 const ManageUsers = () => {
   const [users, setUsers] = useState([]);
 
-  //   useEffect(() => {
-  //     async function getUsers() {
-  //       const response = await callApi({
-  //         relativePath: "/user",
-  //         method: "get",
-  //       });
-  //       response && setUsers(response.data);
-  //     }
-  //     getUsers();
-  //   }, []);
-
   async function getUsers() {
     const response = await axios.get("http://localhost:5000/user");
     response && setUsers(response.data);
@@ -24,6 +13,7 @@ const ManageUsers = () => {
   useEffect(() => {
     getUsers();
   }, []);
+  
   async function banUnBanUser({ userId, banStatus }) {
     const response = await axios.patch("http://localhost:5000/user", {
       userId,
