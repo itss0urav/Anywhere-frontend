@@ -9,6 +9,7 @@ const INITIAL_STATE = {
   userId:JSON.parse(localStorage.getItem("anywhere-user"))?.userId || null,
   posts:[],
   role:JSON.parse(localStorage.getItem("anywhere-user"))?.role || null,
+  email:JSON.parse(localStorage.getItem("anywhere-user"))?.email || null,
   setPosts:() => {}
  
 };
@@ -17,6 +18,7 @@ export const UserContext = createContext(INITIAL_STATE);
 export const UserContextProvider = ({ children }) => {
   const postServices = new PostServices()
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("anywhere-user"))?.username || null);
+  const [email, setEmail] = useState(JSON.parse(localStorage.getItem("anywhere-user"))?.email || null);
   const [posts, setPosts] = useState([])
   useQuery({
     queryFn: postServices.getPosts,
@@ -34,7 +36,8 @@ export const UserContextProvider = ({ children }) => {
         user,
         setUser: setUser,
         posts,
-        setPosts
+        setPosts,
+        email
       }}
     >
       {children}
