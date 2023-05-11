@@ -17,7 +17,7 @@ const Login = () => {
     onSuccess: ({ data, status }) => {
       console.log(data);
       if (status === 201) {
-        alert("You are banned by anywhere");
+        alert("You are banned from anywhere");
         return;
       }
       localStorage.setItem("anywhere-user", JSON.stringify(data));
