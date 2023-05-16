@@ -31,3 +31,31 @@
   background-color: #f5f5f5;
   border-radius: 3px;
 }
+
+.categorylistcontainer {
+  height: 480px; /* Set the desired height for the container */
+  overflow: auto;
+  /* background-color: rgba(0, 0, 0, 0.2); Set the background color with opacity */
+}
+
+.scrollablecontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Adjust the scrollbar style */
+.categorylistcontainer::-webkit-scrollbar {
+  width: 7px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.categorylistcontainer::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    0,
+    255,
+    255,
+    0.3
+  ); /* Transparent cyan with 30% intensity */
+  border-radius: 4px;
+}
