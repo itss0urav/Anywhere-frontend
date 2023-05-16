@@ -5,36 +5,39 @@ import axios from "axios";
 import { storage } from "../../../firebase/config";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 const VerificationPage = () => {
-  const emailRef = useRef()
-  const companyRef = useRef()
-  const websiteRef = useRef()
-  const fullNameRef = useRef()
-  const [governmentId, setGovernmentId] = useState()
-  const {userId} = useContext(UserContext)
-  
-  const handleVerificationRequest = async function(e){
-    e.preventDefault()
-    let fileUrl
-    if(governmentId){
+  const emailRef = useRef();
+  const companyRef = useRef();
+  const websiteRef = useRef();
+  const fullNameRef = useRef();
+  const [governmentId, setGovernmentId] = useState();
+  const { userId } = useContext(UserContext);
+
+  const handleVerificationRequest = async function (e) {
+    e.preventDefault();
+    let fileUrl;
+    if (governmentId) {
       const fileName = Date.now() + governmentId.name;
       const storageRef = ref(storage, fileName);
       await uploadBytes(storageRef, image).then((snapshot) => {
         console.log(snapshot);
       });
-     fileUrl = await getDownloadURL(ref(storage, fileName));
+      fileUrl = await getDownloadURL(ref(storage, fileName));
     }
-const requestObj = {
-  fullName:fullNameRef.current.value,
-  company:companyRef.current.value,
-  website:websiteRef.current.value,
-  email:emailRef.current.value,
-  userId,
-  governmentId:fileUrl
-}
+    const requestObj = {
+      fullName: fullNameRef.current.value,
+      company: companyRef.current.value,
+      website: websiteRef.current.value,
+      email: emailRef.current.value,
+      userId,
+      governmentId: fileUrl,
+    };
 
-const response = await axios.post("http://localhost:5000/verification",requestObj)
-response && console.log(response)
-  }
+    const response = await axios.post(
+      "http://localhost:5000/verification",
+      requestObj
+    );
+    response && console.log(response);
+  };
 
   return (
     <div className={styles.requirementsWrap}>
@@ -53,12 +56,14 @@ response && console.log(response)
         <li>👉Post high-quality content</li>
       </ul>
       <p>
-        Any doubts? Contact Us <a href="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">here</a> to
-        get started.
+        Any doubts? Contact Us{" "}
+        <a href="https://tawk.to/chat/640d9f5b4247f20fefe56404/1grajd02l">
+          here
+        </a>{" "}
+        to get started.
       </p>
       <p>Please fill out the form below and submit the required documents:</p>
       <form onSubmit={handleVerificationRequest}>
-
         <label>
           Full Name:
           <input type="text" ref={fullNameRef} name="name" required />
@@ -85,7 +90,13 @@ response && console.log(response)
 
         <label>
           Government-Issued ID:
-          <input type="file" name="id" onChange={(e) => setGovernmentId(e.target.files[0])} accept="image/*,.pdf" required />
+          <input
+            type="file"
+            name="id"
+            onChange={(e) => setGovernmentId(e.target.files[0])}
+            accept="image/*,.pdf"
+            required
+          />
         </label>
         <br />
 
@@ -95,9 +106,8 @@ response && console.log(response)
         </label> */}
         <br />
 
-        <button type="submit" >Submit</button>
+        <button type="submit">Submit</button>
       </form>
-      
     </div>
   );
 };

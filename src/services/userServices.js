@@ -1,17 +1,14 @@
-import { callApi } from "./callApi"
+import { callApi } from "./callApi";
 
-export class Userservices{
+export class Userservices {
+  async getUserInfo() {
+    const response = await callApi({
+      method: "get",
+      relativePath: "/userData",
+    });
 
-    async getUserInfo(){
-        const response = await callApi({
-            method:"get",
-            relativePath:"/userData"
-        })
-
-        return response?.data
-    }
+    return response?.data;
+  }
 }
 
-
-
-export const useUserServices = () => new Userservices()
+export const useUserServices = () => new Userservices();

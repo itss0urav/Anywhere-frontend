@@ -12,7 +12,7 @@ const FeedbackForm = () => {
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState(null);
   const { user, userId } = useContext(UserContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -21,15 +21,15 @@ const FeedbackForm = () => {
       description: comments,
       username: user,
       email,
-      userId:userId
+      userId: userId,
     };
 
     await callApi({
-      relativePath:"/feedback",
-      method:"post",
-      apiData:feedBackObj
-    })
-    navigate("/")
+      relativePath: "/feedback",
+      method: "post",
+      apiData: feedBackObj,
+    });
+    navigate("/");
   };
 
   return (
@@ -71,7 +71,8 @@ const FeedbackForm = () => {
             <select
               value={rating}
               onChange={(event) => setRating(event.target.value)}
-              required>
+              required
+            >
               <option value={0}>Select a Rating</option>
               <option value={1}>1</option>
               <option value={2}>2</option>

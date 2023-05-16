@@ -23,7 +23,6 @@ export class VoteService {
       relativePath: "/vote",
       method: "get",
     });
-    return result?.data
+    return result?.data;
   }
-
 }

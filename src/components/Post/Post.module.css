@@ -8,7 +8,6 @@
   text-align: start;
   background-color: #ffff;
   border-radius: 10px;
-  
 }
 .imageWrap {
   height: 65%;
@@ -19,8 +18,8 @@
   width: 100%;
   object-fit: cover;
 }
-.linkGap{
-  padding-top:1rem;
+.linkGap {
+  padding-top: 1rem;
 }
 .userNAme {
   width: 100%;

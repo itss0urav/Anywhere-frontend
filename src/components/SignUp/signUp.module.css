@@ -18,11 +18,26 @@
   );
   color: white;
 }
-.buttonFix{
+.alertMessage {
+  color: cyan;
+  font-family: Poppins;
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.buttonFix {
   margin-right: 1rem;
 }
-.contactUsButton{
-  margin-left:4rem ;
+.contactUsButton {
+  margin-left: 4rem;
 }
 .formWrap input {
   outline: none;

@@ -3,11 +3,10 @@
   display: grid;
   font-family: poppins;
 }
-.modBtn{
+.modBtn {
   color: red;
 }
 .innerWrappper {
-  
   color: aliceblue;
   display: flex;
   flex-direction: column;

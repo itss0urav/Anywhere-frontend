@@ -8,7 +8,7 @@ import { callApi } from "../../services/callApi";
 
 const Navbar = () => {
   const { user, setUser, posts, setPosts } = useContext(UserContext);
-  const [selected, setSelected] = useState()
+  const [selected, setSelected] = useState();
   const searchRef = useRef();
 
   async function searchPost() {

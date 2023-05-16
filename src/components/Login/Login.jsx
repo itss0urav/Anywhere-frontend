@@ -33,6 +33,11 @@ const Login = () => {
       password: passwordRef.current.value,
     };
 
+    if (userDetails.password.length < 8) {
+      alert("Incorrect Password");
+      return;
+    }
+
     await mutate(userDetails);
   }
 

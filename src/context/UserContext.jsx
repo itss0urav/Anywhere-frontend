@@ -3,23 +3,25 @@ import { useQuery } from "react-query";
 import { PostServices } from "../services/postServices";
 
 const INITIAL_STATE = {
-  
-  user:JSON.parse(localStorage.getItem("anywhere-user"))?.username || null,
+  user: JSON.parse(localStorage.getItem("anywhere-user"))?.username || null,
   setUser: () => {},
-  userId:JSON.parse(localStorage.getItem("anywhere-user"))?.userId || null,
-  posts:[],
-  role:JSON.parse(localStorage.getItem("anywhere-user"))?.role || null,
-  email:JSON.parse(localStorage.getItem("anywhere-user"))?.email || null,
-  setPosts:() => {}
- 
+  userId: JSON.parse(localStorage.getItem("anywhere-user"))?.userId || null,
+  posts: [],
+  role: JSON.parse(localStorage.getItem("anywhere-user"))?.role || null,
+  email: JSON.parse(localStorage.getItem("anywhere-user"))?.email || null,
+  setPosts: () => {},
 };
 export const UserContext = createContext(INITIAL_STATE);
 
 export const UserContextProvider = ({ children }) => {
-  const postServices = new PostServices()
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("anywhere-user"))?.username || null);
-  const [email, setEmail] = useState(JSON.parse(localStorage.getItem("anywhere-user"))?.email || null);
-  const [posts, setPosts] = useState([])
+  const postServices = new PostServices();
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("anywhere-user"))?.username || null
+  );
+  const [email, setEmail] = useState(
+    JSON.parse(localStorage.getItem("anywhere-user"))?.email || null
+  );
+  const [posts, setPosts] = useState([]);
   useQuery({
     queryFn: postServices.getPosts,
     queryKey: ["posts"],
@@ -27,7 +29,7 @@ export const UserContextProvider = ({ children }) => {
       console.log(data);
       setPosts(data);
     },
-    refetchOnWindowFocus:false
+    refetchOnWindowFocus: false,
   });
   return (
     <UserContext.Provider
@@ -37,7 +39,7 @@ export const UserContextProvider = ({ children }) => {
         setUser: setUser,
         posts,
         setPosts,
-        email
+        email,
       }}
     >
       {children}

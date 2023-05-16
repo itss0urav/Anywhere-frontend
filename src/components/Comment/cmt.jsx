@@ -40,8 +40,6 @@ const Post = () => {
   };
 
   return (
-    
-    
     <form onSubmit={handleSubmit} className={styles.formWrap}>
       <h1 className={styles.header}>Comment</h1>
 

@@ -13,7 +13,7 @@
     rgb(0, 0, 0) 100%
   );
 }
-.navbarGap{
+.navbarGap {
   margin-bottom: 2rem;
 }
 
@@ -44,7 +44,7 @@ select {
   background-color: white;
   height: 40px;
 }
-.buttonHeight{
+.buttonHeight {
   margin-top: 2rem;
 }
 

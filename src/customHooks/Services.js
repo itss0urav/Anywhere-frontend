@@ -1,8 +1,8 @@
-import { PostServices } from "../services/postServices"
-import { VoteService } from "../services/voteServices"
+import { PostServices } from "../services/postServices";
+import { VoteService } from "../services/voteServices";
 
 export const useVoteService = () => {
-    return new VoteService()
-}
+  return new VoteService();
+};
 
-export const usePostServices = () => new PostServices()
+export const usePostServices = () => new PostServices();

@@ -1,7 +1,7 @@
 .reportpost {
   color: white;
-    padding: 20px;
-    background: linear-gradient(
+  padding: 20px;
+  background: linear-gradient(
     90deg,
     rgb(6, 0, 26) 0%,
     rgb(5, 0, 93) 15%,
@@ -9,48 +9,47 @@
     rgb(0, 0, 93) 85%,
     rgb(6, 0, 26) 100%
   );
-    /* border: 1px solid #ddd; */
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-  
-  .reportpost h2 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: 0;
-  }
-  
-  .reportpost label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .reportpost textarea {
-    width: 100%;
-    height: 100px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1em;
-    resize: vertical;
-  }
-  
-  .reportpost button {
-    display: block;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-  }
-  
-  .reportpost button:hover {
-    background-color: #3e8e41;
-  }
-  
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.reportpost h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 0;
+}
+
+.reportpost label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.reportpost textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+  resize: vertical;
+}
+
+.reportpost button {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.reportpost button:hover {
+  background-color: #3e8e41;
+}

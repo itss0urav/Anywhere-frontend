@@ -19,22 +19,22 @@ const Post = () => {
   const { mutate, isLoading, isError } = useMutation(postServices.createPost, {
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
-      queryClient.invalidateQueries("Categories")
+      queryClient.invalidateQueries("Categories");
       navigate("/");
     },
   });
 
   //Function to create a new post
   const handleSubmit = async (event) => {
-    let imgUrl
+    let imgUrl;
     event.preventDefault();
-    if(image){
+    if (image) {
       const fileName = Date.now() + image.name;
       const storageRef = ref(storage, fileName);
       await uploadBytes(storageRef, image).then((snapshot) => {
         console.log(snapshot);
       });
-     imgUrl = await getDownloadURL(ref(storage, fileName));
+      imgUrl = await getDownloadURL(ref(storage, fileName));
     }
 
     let newPost = {
@@ -45,7 +45,7 @@ const Post = () => {
       category: categoryRef.current.value,
       isNfsw: nsfwRef.current.checked,
     };
-    console.log(newPost)
+    console.log(newPost);
     mutate(newPost);
   };
 

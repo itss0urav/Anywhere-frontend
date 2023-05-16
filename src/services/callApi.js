@@ -10,7 +10,7 @@ export async function callApi(data) {
     const result = await axios({
       method,
       url: `${BASE_URL}${relativePath}`,
-      data:apiData,
+      data: apiData,
       headers: {
         Authorization: `Bearer ${loggedInUser?.accessToken}`,
       },
@@ -19,7 +19,7 @@ export async function callApi(data) {
     return result;
   } catch (error) {
     console.log(error);
-    if(error.response.status === 401){
+    if (error.response.status === 401) {
       // alert("Your session has expired. Please login again.")
       // window.location.replace("/login")
     }
