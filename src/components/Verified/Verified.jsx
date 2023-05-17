@@ -38,8 +38,6 @@ const VerifiedPartnerForm = () => {
       userId,
       governmentId: fileUrl,
     };
-    console.log(requestObj);
-
     const response = await axios.post(
       "http://localhost:5000/verification",
       requestObj

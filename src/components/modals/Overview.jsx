@@ -15,19 +15,15 @@ const Overview = () => {
       });
       response && setPost(response.data[0]);
     }
-    async function getComments() {
+    async function getTopComments() {
       const response = await callApi({
-        relativePath: `/comment?postId=${postId}`,
+        relativePath: `/overview/${postId}`,
       });
       // response && setComments(response.data)
-      response && setHighVal(response.data.map((comment) => comment.vote.vote));
-      response &&
-        setComments(
-          response.data.find((comment) => comment.vote.vote === highVal)
-        );
+      setComments(response.data);
     }
     getPostById();
-    getComments();
+    getTopComments();
   }, []);
   console.log("comments", comments);
   return (
@@ -35,8 +31,7 @@ const Overview = () => {
       style={{
         width: "50%",
         paddingLeft: "20%",
-      }}
-    >
+      }}>
       <Post
         title={post?.title}
         description={post?.description}
@@ -48,9 +43,18 @@ const Overview = () => {
         username={post?.username}
         link={post?.link}
       />
-      <div>
-        <p>Most </p>
-        {JSON.stringify(comments)}
+      <div
+        style={{ color: "black", backgroundColor: "white", paddingLeft: 40, fontFamily:"LAto" }}>
+        <p>Most reviewed comment </p>
+        <div style={{marginTop:10}}>
+          <div style={{display:"flex", justifyContent:"space-between", fontFamily:"Roboto"}}>
+
+          <p>{comments.content}</p>
+          <p>Commented by {comments?.userId?.username}</p>
+          <p>Vote count  {}</p>
+          </div>
+
+        </div>
       </div>
     </div>
   );
