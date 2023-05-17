@@ -28,14 +28,14 @@ const FeedBackMod = () => {
         }}></div>
 
         <div style={{marginTop:"30px"}}>
-          {
+           {
             feedbacks.map((feedback) => (
             <div style={{fontFamily:"Roboto", border:"1px solid white", padding:"5px 5px", borderRadius:"5px"}}>
             <p>Name : {feedback?.username}</p>
             <p>Email : {feedback?.email}</p>
             <p>Message : {feedback?.description}</p>
             <p>Rating : {feedback?.rating}</p>
-              </div>
+            </div>
             ))
           }
         </div>
