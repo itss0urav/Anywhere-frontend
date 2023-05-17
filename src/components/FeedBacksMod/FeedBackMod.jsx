@@ -17,28 +17,61 @@ const FeedBackMod = () => {
     getFeedBacks();
   }, []);
   return (
-    <div style={{ color: "white", padding: "20px 20px" }}>
-      <h1 style={{ fontFamily: "Roboto" }}>Feedbacks</h1>
+    <div
+      style={{ color: "white", padding: "20px 20px", fontFamily: "poppins" }}
+    >
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{ marginBottom: "20px" }}>Feedbacks</h1>
+      </div>
       <div
         style={{
           height: "5px",
           width: "100%",
           backgroundColor: "gray",
           borderRadius: "5px",
-        }}></div>
+          marginBottom: "30px",
+        }}
+      ></div>
 
-        <div style={{marginTop:"30px"}}>
-           {
-            feedbacks.map((feedback) => (
-            <div style={{fontFamily:"Roboto", border:"1px solid white", padding:"5px 5px", borderRadius:"5px"}}>
-            <p>Name : {feedback?.username}</p>
-            <p>Email : {feedback?.email}</p>
-            <p>Message : {feedback?.description}</p>
-            <p>Rating : {feedback?.rating}</p>
+      <div style={{ fontFamily: "poppins" }}>
+        {feedbacks.map((feedback) => (
+          <div
+            key={feedback._id}
+            style={{
+              border: "1px solid white",
+              padding: "10px",
+              marginBottom: "20px",
+              borderRadius: "5px",
+            }}
+          >
+            <div
+              style={{
+                marginLeft: "11px",
+                fontWeight: "bold",
+                marginBottom: "10px",
+              }}
+            >
+              <p>Username: {feedback?.username}</p>
+              <p>Email: {feedback?.email}</p>
+              <p>Message: {feedback?.description}</p>
+              <p>Rating: {feedback?.rating}</p>
             </div>
-            ))
-          }
-        </div>
+            <button
+              onClick={() => deleteFeedback(feedback._id)}
+              style={{
+                color: "red",
+                backgroundColor: "red",
+                borderRadius: "3px",
+                padding: "5px 10px",
+                cursor: "pointer",
+                transition: "background-color 0.3s",
+              }}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

@@ -14,6 +14,11 @@ const ManageUsers = () => {
     getUsers();
   }, []);
 
+  async function deleteFeedback(id) {
+    const response = await axios.delete(`http://localhost:5000/feedback/${id}`);
+    response && getFeedBacks();
+  }
+
   async function banUnBanUser({ userId, banStatus }) {
     const response = await axios.patch("http://localhost:5000/user", {
       userId,
@@ -23,12 +28,34 @@ const ManageUsers = () => {
   }
   return (
     <div style={{ padding: "20px 10px" }}>
+      <div style={{ textAlign: "center" }}>
+        <h1
+          style={{
+            fontFamily: "poppins",
+            color: "white",
+            marginBottom: "20px",
+          }}
+        >
+          Manage Users
+        </h1>
+      </div>
+      <div
+        style={{
+          height: "5px",
+          width: "100%",
+          backgroundColor: "gray",
+          borderRadius: "5px",
+          marginBottom: "30px",
+        }}
+      ></div>
+
       <div
         style={{
           color: "white",
           display: "flex",
           flexDirection: "column",
           gap: 10,
+          fontFamily: "poppins",
         }}
       >
         {users.map((user) => {
@@ -38,6 +65,7 @@ const ManageUsers = () => {
                 border: "2px solid #555",
                 padding: "10px 18px",
                 borderRadius: "5px",
+                fontWeight: "bold",
               }}
             >
               <p>Name : {user.username}</p>
