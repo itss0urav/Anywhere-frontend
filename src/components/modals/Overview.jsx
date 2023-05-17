@@ -31,7 +31,8 @@ const Overview = () => {
       style={{
         width: "50%",
         paddingLeft: "20%",
-      }}>
+      }}
+    >
       <Post
         title={post?.title}
         description={post?.description}
@@ -43,17 +44,47 @@ const Overview = () => {
         username={post?.username}
         link={post?.link}
       />
-      <div
-        style={{ color: "black", backgroundColor: "white", paddingLeft: 40, fontFamily:"LAto" }}>
-        <p>Most reviewed comment </p>
-        <div style={{marginTop:10}}>
-          <div style={{display:"flex", justifyContent:"space-between", fontFamily:"Roboto"}}>
-
-          <p>{comments.content}</p>
-          <p>Commented by {comments?.userId?.username}</p>
-          <p>Vote count  {}</p>
+      <div style={{ border: "40px solid white", padding: "5px" }}>
+        <div
+          style={{
+            color: "black",
+            backgroundColor: "white",
+            paddingLeft: 40,
+            paddingTop: 20,
+            paddingBottom: 10,
+            fontFamily: "Lato",
+            fontWeight: "bold",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "Poppins",
+              fontSize: "1.5rem",
+              color: "blue",
+              textAlign: "center",
+              textDecoration: "underline",
+            }}
+          >
+            Most Agreed Comment
+          </p>
+          <div style={{ marginTop: 20 }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                fontFamily: "Roboto",
+              }}
+            >
+              <p style={{ fontSize: "1.2rem", textAlign: "center" }}>
+                {comments.content}
+              </p>
+              <p style={{ fontSize: "14px", color: "black" }}>
+                Commented by{" "}
+                <p style={{ color: "red" }}>{comments?.userId?.username}</p>
+              </p>
+              {/* <p style={{ color: "red" }} >Vote count {comments?.vote}</p> */}
+            </div>
           </div>
-
         </div>
       </div>
     </div>
