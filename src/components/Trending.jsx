@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { callApi } from "../services/callApi";
 import Post from "./Post/Post";
+import { useQuery } from "react-query";
 
 const Trending = () => {
   const [trendingPosts, setTrendingPosts] = useState([]);
-  useEffect(() => {
-    async function getPosts() {
-      const response = await callApi({
-        relativePath: "/post",
+  useQuery({
+    queryKey:"trendingPosts",
+    queryFn:async() => {
+      return await callApi({
+        relativePath: "/post/trending",
         method: "get",
-      });
-      response && setTrendingPosts(response.data);
-    }
-    getPosts();
-  }, []);
+      }) 
+    },
+    onSuccess:(response) => setTrendingPosts(response.data)
+  })
+  // useEffect(() => {
+  //   async function getPosts() {
+  //     const response = await callApi({
+  //       relativePath: "/post/trending",
+  //       method: "get",
+  //     });
+  //     response && setTrendingPosts(response.data);
+  //   }
+  //   getPosts();
+  // }, []);
 
   return (
     <div style={{ color: "white", position: "relative" }}>
@@ -37,17 +48,18 @@ const Trending = () => {
       >
         {trendingPosts.map((post) => (
           <Post
-            postId={post._id}
-            username={post.username}
-            title={post?.title}
-            description={post.description}
-            vote={post.vote}
-            imgUrl={post.imageUrl}
-            link={post.link}
-            isNfsw={post.isNfsw}
-            userid={post.userId}
+            postId={post.resourceId._id}
+            username={post.resourceId.username}
+            title={post?.resourceId.title}
+            description={post.resourceId.description}
+            vote={post}
+            imgUrl={post.resourceId.imageUrl}
+            link={post.resourceId.link}
+            isNfsw={post.resourceId.isNfsw}
+            userid={post.resourceId.userId}
           />
         ))}
+       
       </div>
     </div>
   );

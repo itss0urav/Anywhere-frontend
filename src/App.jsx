@@ -19,6 +19,7 @@ import Overview from "./components/modals/Overview";
 import ManageUsers from "./components/ManageaUsers";
 import Trending from "./components/Trending";
 import FeedBackMod from "./components/FeedBacksMod/FeedBackMod";
+import ReportMod from "./components/reportMod/ReportMod";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/overview/:postId" element={<Overview />} />
             <Route path="/trending" element={<Trending />} />
             <Route path="feedBacksMod" element={<FeedBackMod />} />
+            <Route path="reportsMod" element={<ReportMod />} />
           </Route>
           <Route path="logIn" element={<Login />} />
           <Route path="signUp" element={<SignUp />} />
