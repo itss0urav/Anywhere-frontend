@@ -16,7 +16,7 @@ const Comment = () => {
   const postServices = usePostServices();
   const voteServices = useVoteService();
   const queryClient = useQueryClient();
-  const { userId } = useContext(UserContext);
+  const { userId, role } = useContext(UserContext);
   useQuery({
     queryKey: [postId],
     queryFn: postServices.getPostById,
@@ -150,7 +150,7 @@ const Comment = () => {
                   >
                     <h6>Commented by {comment.userId.username}</h6>
                     <p>
-                      {comment?.userId._id === userId && (
+                      {comment?.userId._id === userId || role === "moderator" && (
                         <AiFillDelete
                           onClick={() => deleteComment(comment?._id)}
                         />
