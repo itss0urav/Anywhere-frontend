@@ -75,7 +75,13 @@ const Overview = () => {
                 fontFamily: "Roboto",
               }}
             >
-              <p style={{ fontSize: "1.2rem", textAlign: "center" }}>
+              <p
+                style={{
+                  fontSize: "1.2rem",
+                  textAlign: "center",
+                  paddingBottom: "1.5rem",
+                }}
+              >
                 {comments.content}
               </p>
               <p style={{ fontSize: "14px", color: "black" }}>
