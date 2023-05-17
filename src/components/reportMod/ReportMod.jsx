@@ -30,15 +30,15 @@ const ReportMod = () => {
         {
             reportedPosts.map((post) => (
                 <Post 
-                imgUrl={post?.postId[0].imageUrl}
-                title={post?.postId[0].title}
-                description={post?.postId[0].description}
-                vote={post?.postId[0].vote}
-                postId={post.postId[0]._id}
-                isNfsw={post.postId[0].isNfsw}
-                link={post.postId[0].link}
-                userid={post.postId[0].userId._id}
-                username={post.postId[0].userId.username}
+                imgUrl={post?.postId[0]?.imageUrl}
+                title={post?.postId[0]?.title}
+                description={post?.postId[0]?.description}
+                vote={post?.postId[0]?.vote}
+                postId={post.postId[0]?._id}
+                isNfsw={post.postId[0]?.isNfsw}
+                link={post.postId[0]?.link}
+                userid={post.postId[0]?.userId._id}
+                username={post.postId[0]?.userId.username}
                 />
             ))
         }
