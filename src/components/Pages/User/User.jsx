@@ -52,7 +52,7 @@ const UserProfile = ({}) => {
           </Link>
         )}
         {role === "moderator" && (
-          <Link to="/">
+          <Link to="/feedBackMod">
             <button className={styles.modBtn}>Feedbacks</button>
           </Link>
         )}
