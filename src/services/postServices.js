@@ -1,3 +1,4 @@
+import axios from "axios";
 import { callApi } from "./callApi";
 
 export class PostServices {

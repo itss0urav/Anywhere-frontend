@@ -48,15 +48,15 @@ const Trending = () => {
       >
         {trendingPosts.map((post) => (
           <Post
-            postId={post.resourceId._id}
-            username={post.resourceId.username}
-            title={post?.resourceId.title}
-            description={post.resourceId.description}
+            postId={post.resourceId?._id}
+            username={post.resourceId?.username}
+            title={post?.resourceId?.title}
+            description={post.resourceId?.description}
             vote={post}
-            imgUrl={post.resourceId.imageUrl}
-            link={post.resourceId.link}
-            isNfsw={post.resourceId.isNfsw}
-            userid={post.resourceId.userId}
+            imgUrl={post.resourceId?.imageUrl}
+            link={post.resourceId?.link}
+            isNfsw={post.resourceId?.isNfsw}
+            userid={post.resourceId?.userId}
           />
         ))}
        
