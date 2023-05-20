@@ -3,6 +3,265 @@
   height: 100vh;
   display: grid;
   place-content: center;
+  background-image: url(https://www.icegif.com/wp-content/uploads/2023/04/icegif-452.gif);
+  animation: lightningEffect 1s infinite;
+}
+
+@keyframes lightningEffect {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  45% {
+    opacity: 0;
+  }
+  46% {
+    opacity: 0;
+  }
+  47% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 0;
+  }
+  50%,
+  51%,
+  52%,
+  53%,
+  54%,
+  55%,
+  56%,
+  57%,
+  58%,
+  59%,
+  60%,
+  61%,
+  62%,
+  63%,
+  64%,
+  65%,
+  66%,
+  67%,
+  68%,
+  69%,
+  70%,
+  71%,
+  72%,
+  73%,
+  74%,
+  75%,
+  76%,
+  77%,
+  78%,
+  79%,
+  80%,
+  81%,
+  82%,
+  83%,
+  84%,
+  85%,
+  86%,
+  87%,
+  88%,
+  89% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  91% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes lightningEffect {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  45% {
+    opacity: 0.9;
+  }
+  45% {
+    opacity: 0;
+  }
+  46% {
+    opacity: 0;
+  }
+  47% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 0;
+  }
+  50%,
+  51%,
+  52%,
+  53%,
+  54%,
+  55%,
+  56%,
+  57%,
+  58%,
+  59%,
+  60%,
+  61%,
+  62%,
+  63%,
+  64%,
+  65%,
+  66%,
+  67%,
+  68%,
+  69%,
+  70%,
+  71%,
+  72%,
+  73%,
+  74%,
+  75%,
+  76%,
+  77%,
+  78%,
+  79%,
+  80%,
+  81%,
+  82%,
+  83%,
+  84%,
+  85%,
+  86%,
+  87%,
+  88%,
+  89% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  91% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.lightning {
+  animation-name: lightningEffect;
+  animation-duration: 2s, 4s, 7s;
+  animation-iteration-count: infinite;
+}
+
+.lightning {
+  animation-name: lightningEffect;
+  animation-duration: 2s, 4s, 7s;
+  animation-iteration-count: infinite;
+}
+
+.lightning {
+  animation-name: lightningEffect;
+  animation-duration: 2s, 4s, 7s;
+  animation-iteration-count: infinite;
 }
 .formWrap {
   display: flex;
