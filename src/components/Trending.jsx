@@ -6,25 +6,15 @@ import { useQuery } from "react-query";
 const Trending = () => {
   const [trendingPosts, setTrendingPosts] = useState([]);
   useQuery({
-    queryKey:"trendingPosts",
-    queryFn:async() => {
+    queryKey: "trendingPosts",
+    queryFn: async () => {
       return await callApi({
         relativePath: "/post/trending",
         method: "get",
-      }) 
+      });
     },
-    onSuccess:(response) => setTrendingPosts(response.data)
-  })
-  // useEffect(() => {
-  //   async function getPosts() {
-  //     const response = await callApi({
-  //       relativePath: "/post/trending",
-  //       method: "get",
-  //     });
-  //     response && setTrendingPosts(response.data);
-  //   }
-  //   getPosts();
-  // }, []);
+    onSuccess: (response) => setTrendingPosts(response.data),
+  });
 
   return (
     <div style={{ color: "white", position: "relative" }}>
@@ -59,7 +49,6 @@ const Trending = () => {
             userid={post.resourceId?.userId}
           />
         ))}
-       
       </div>
     </div>
   );

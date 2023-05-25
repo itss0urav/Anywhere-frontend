@@ -36,7 +36,8 @@
 .categorylistcontainer {
   height: 480px; /* Set the desired height for the container */
   overflow: auto;
-  /* background-color: rgba(0, 0, 0, 0.2); Set the background color with opacity */
+  background-color: rgba(23, 22, 32, 0.1);
+  /* Set the background color with opacity */
 }
 
 .scrollablecontainer {

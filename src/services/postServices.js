@@ -24,9 +24,7 @@ export class PostServices {
       method: "delete",
       relativePath: `/post/${id}`,
     });
-    await axios.delete(
-      `http://localhost:5000/report/${id}`
-    );
+    await axios.delete(`http://localhost:5000/report/${id}`);
     return res?.data;
   }
 

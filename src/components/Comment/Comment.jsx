@@ -150,11 +150,12 @@ const Comment = () => {
                   >
                     <h6>Commented by {comment.userId.username}</h6>
                     <p>
-                      {comment?.userId._id === userId || role === "moderator" && (
-                        <AiFillDelete
-                          onClick={() => deleteComment(comment?._id)}
-                        />
-                      )}
+                      {comment?.userId._id === userId ||
+                        (role === "moderator" && (
+                          <AiFillDelete
+                            onClick={() => deleteComment(comment?._id)}
+                          />
+                        ))}
                     </p>
                   </div>
                 </div>

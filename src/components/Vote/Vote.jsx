@@ -19,7 +19,7 @@ const Vote = ({ vote, postId }) => {
     mutationFn: voteServices.upVote,
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
-      queryClient.invalidateQueries("trendingPosts")
+      queryClient.invalidateQueries("trendingPosts");
       queryClient.invalidateQueries(postId);
     },
   });
@@ -29,7 +29,7 @@ const Vote = ({ vote, postId }) => {
     mutationFn: voteServices.downVote,
     onSuccess: (data) => {
       queryClient.invalidateQueries("posts");
-      queryClient.invalidateQueries("trendingPosts")
+      queryClient.invalidateQueries("trendingPosts");
       queryClient.invalidateQueries(postId);
     },
   });
