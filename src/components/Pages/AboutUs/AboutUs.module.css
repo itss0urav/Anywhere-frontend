@@ -6,6 +6,9 @@
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: poppins;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .team {
@@ -55,4 +58,22 @@
 .info h3,
 .info p {
   margin: 0;
+}
+
+.parallaxLayer1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.parallaxLayer2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
 }

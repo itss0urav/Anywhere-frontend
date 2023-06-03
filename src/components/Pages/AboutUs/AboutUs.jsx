@@ -1,4 +1,5 @@
 import React from "react";
+import Rellax from "react-rellax";
 import styles from "./AboutUs.module.css";
 
 function Developer(props) {
@@ -6,9 +7,11 @@ function Developer(props) {
   return (
     <div className={styles.developer}>
       <img className={styles.image} src={photo} alt={name} />
-      <h3>{name}</h3>
-      <p>{title}</p>
-      <p>{email}</p>
+      <div className={styles.info}>
+        <h3>{name}</h3>
+        <p>{title}</p>
+        <p>{email}</p>
+      </div>
     </div>
   );
 }
@@ -48,8 +51,17 @@ function AboutUs() {
       email: "sharonshine2002@gmail.com",
     },
   ];
+
   return (
     <div className={styles.aboutus}>
+      <Rellax speed={-4} className={styles.parallaxLayer1}>
+        <img
+          src="https://media.discordapp.net/attachments/1070984839077036052/1071417517454663800/Anywhere-Logo-Final.png?width=670&height=670"
+          alt="Parallax Layer 1"
+          className="absolute top-0 left-0 w-full h-auto"
+        />
+      </Rellax>
+
       <h1>About Us</h1>
       <section className={styles.team}>
         {developers.map((developer) => (
