@@ -10,6 +10,39 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+h1 {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #00ffff, #2f00ff);
+  -webkit-text-fill-color: transparent;
+}
+.name {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #fff200, #ff0000);
+  -webkit-text-fill-color: transparent;
+}
+.desc {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #fff200, #ff0000);
+  -webkit-text-fill-color: transparent;
+}
+.email {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #bfff00, #ff0000);
+  -webkit-text-fill-color: transparent;
+}
+.title {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to right, #ff0000, #00c8ff);
+  -webkit-text-fill-color: transparent;
+}
+.link {
+  text-decoration: none;
+}
 
 .team {
   display: flex;

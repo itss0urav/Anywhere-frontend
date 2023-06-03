@@ -1,16 +1,20 @@
 import React from "react";
 import Rellax from "react-rellax";
 import styles from "./AboutUs.module.css";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function Developer(props) {
-  const { photo, name, title, email } = props;
+  const { photo, name, title, email, desc } = props;
   return (
     <div className={styles.developer}>
       <img className={styles.image} src={photo} alt={name} />
       <div className={styles.info}>
-        <h3>{name}</h3>
-        <p>{title}</p>
-        <p>{email}</p>
+        <h3 className={styles.name}>{name}</h3>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.email}>{email}</p>
+        <Link to="https://github.com/itss0urav" className={styles.link}>
+          <p className={styles.desc}>{desc}</p>
+        </Link>
       </div>
     </div>
   );
@@ -21,11 +25,13 @@ function AboutUs() {
     {
       id: 1,
       name: "Sourav S",
-      title: "Lead Developer & Project Manager",
+      title: "Developer",
       photo:
-        "https://media.discordapp.net/attachments/1070984839077036052/1079693185279864882/1.png?width=911&height=606",
+        "https://cdn.discordapp.com/attachments/979241917852303370/1114239636403920948/1685725810978.jpg",
       email: "souravhacks987@gmail.com",
+      desc: "itss0urav",
     },
+
     {
       id: 2,
       name: "Amal Sam jacob",
@@ -71,6 +77,7 @@ function AboutUs() {
             title={developer.title}
             photo={developer.photo}
             email={developer.email}
+            desc={developer.desc}
           />
         ))}
       </section>
